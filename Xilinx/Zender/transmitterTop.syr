@@ -1,0 +1,620 @@
+Release 10.1 - xst K.31 (nt)
+Copyright (c) 1995-2008 Xilinx, Inc.  All rights reserved.
+--> Parameter TMPDIR set to E:/Pieter-Jan Steeman/Project/Xilinx/Zender/xst/projnav.tmp
+
+
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.08 secs
+ 
+--> Parameter xsthdpdir set to E:/Pieter-Jan Steeman/Project/Xilinx/Zender/xst
+
+
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.08 secs
+ 
+--> Reading design: transmitterTop.prj
+
+TABLE OF CONTENTS
+  1) Synthesis Options Summary
+  2) HDL Compilation
+  3) Design Hierarchy Analysis
+  4) HDL Analysis
+  5) HDL Synthesis
+     5.1) HDL Synthesis Report
+  6) Advanced HDL Synthesis
+     6.1) Advanced HDL Synthesis Report
+  7) Low Level Synthesis
+  8) Partition Report
+  9) Final Report
+     9.1) Device utilization summary
+     9.2) Partition Resource Summary
+     9.3) TIMING REPORT
+
+
+=========================================================================
+*                      Synthesis Options Summary                        *
+=========================================================================
+---- Source Parameters
+Input File Name                    : "transmitterTop.prj"
+Input Format                       : mixed
+Ignore Synthesis Constraint File   : NO
+
+---- Target Parameters
+Output File Name                   : "transmitterTop"
+Output Format                      : NGC
+Target Device                      : xc2vp30-7-ff896
+
+---- Source Options
+Top Module Name                    : transmitterTop
+Automatic FSM Extraction           : YES
+FSM Encoding Algorithm             : Auto
+Safe Implementation                : No
+FSM Style                          : lut
+RAM Extraction                     : Yes
+RAM Style                          : Auto
+ROM Extraction                     : Yes
+Mux Style                          : Auto
+Decoder Extraction                 : YES
+Priority Encoder Extraction        : YES
+Shift Register Extraction          : YES
+Logical Shifter Extraction         : YES
+XOR Collapsing                     : YES
+ROM Style                          : Auto
+Mux Extraction                     : YES
+Resource Sharing                   : YES
+Asynchronous To Synchronous        : NO
+Multiplier Style                   : auto
+Automatic Register Balancing       : No
+
+---- Target Options
+Add IO Buffers                     : YES
+Global Maximum Fanout              : 500
+Add Generic Clock Buffer(BUFG)     : 16
+Register Duplication               : YES
+Slice Packing                      : YES
+Optimize Instantiated Primitives   : NO
+Convert Tristates To Logic         : Yes
+Use Clock Enable                   : Yes
+Use Synchronous Set                : Yes
+Use Synchronous Reset              : Yes
+Pack IO Registers into IOBs        : auto
+Equivalent register Removal        : YES
+
+---- General Options
+Optimization Goal                  : Speed
+Optimization Effort                : 1
+Library Search Order               : transmitterTop.lso
+Keep Hierarchy                     : NO
+Netlist Hierarchy                  : as_optimized
+RTL Output                         : Yes
+Global Optimization                : AllClockNets
+Read Cores                         : YES
+Write Timing Constraints           : NO
+Cross Clock Analysis               : NO
+Hierarchy Separator                : /
+Bus Delimiter                      : <>
+Case Specifier                     : maintain
+Slice Utilization Ratio            : 100
+BRAM Utilization Ratio             : 100
+Verilog 2001                       : YES
+Auto BRAM Packing                  : NO
+Slice Utilization Ratio Delta      : 5
+
+=========================================================================
+
+
+=========================================================================
+*                          HDL Compilation                              *
+=========================================================================
+Compiling vhdl file "E:/Pieter-Jan Steeman/Project/Xilinx/Zender/pngen.vhd" in Library work.
+Architecture behavior of Entity pngen is up to date.
+Compiling vhdl file "E:/Pieter-Jan Steeman/Project/Xilinx/Zender/mux.vhd" in Library work.
+Architecture behavior of Entity mux is up to date.
+Compiling vhdl file "E:/Pieter-Jan Steeman/Project/Xilinx/Zender/seqcont.vhd" in Library work.
+Architecture behavior of Entity seqcont is up to date.
+Compiling vhdl file "E:/Pieter-Jan Steeman/Project/Xilinx/Zender/datareg.vhd" in Library work.
+Architecture behavior of Entity datareg is up to date.
+Compiling vhdl file "E:/Pieter-Jan Steeman/Project/Xilinx/Zender/debouncer.vhd" in Library work.
+Architecture behavior of Entity debouncer is up to date.
+Compiling vhdl file "E:/Pieter-Jan Steeman/Project/Xilinx/Zender/edgedetector.vhd" in Library work.
+Architecture behavior of Entity edgedetector is up to date.
+Compiling vhdl file "E:/Pieter-Jan Steeman/Project/Xilinx/Zender/udcounter.vhd" in Library work.
+Architecture behavior of Entity udcounter is up to date.
+Compiling vhdl file "E:/Pieter-Jan Steeman/Project/Xilinx/Zender/segdec.vhd" in Library work.
+Architecture behavior of Entity segdec is up to date.
+Compiling vhdl file "E:/Pieter-Jan Steeman/Project/Xilinx/Zender/clkDivTx.vhd" in Library work.
+Entity <clkdiv_tx> compiled.
+Entity <clkdiv_tx> (Architecture <behavior>) compiled.
+Compiling vhdl file "E:/Pieter-Jan Steeman/Project/Xilinx/Zender/ApplicationTop.vhd" in Library work.
+Architecture behavior of Entity apptop is up to date.
+Compiling vhdl file "E:/Pieter-Jan Steeman/Project/Xilinx/Zender/DataTop.vhd" in Library work.
+Architecture behavior of Entity datatop is up to date.
+Compiling vhdl file "E:/Pieter-Jan Steeman/Project/Xilinx/Zender/AccessTop.vhd" in Library work.
+Architecture behavior of Entity acctop is up to date.
+Compiling vhdl file "E:/Pieter-Jan Steeman/Project/Xilinx/Zender/TransmitterTop.vhd" in Library work.
+Architecture behavior of Entity transmittertop is up to date.
+
+=========================================================================
+*                     Design Hierarchy Analysis                         *
+=========================================================================
+Analyzing hierarchy for entity <transmitterTop> in library <work> (architecture <behavior>).
+
+Analyzing hierarchy for entity <clkDiv_tx> in library <work> (architecture <behavior>).
+
+Analyzing hierarchy for entity <apptop> in library <work> (architecture <behavior>).
+
+Analyzing hierarchy for entity <datatop> in library <work> (architecture <behavior>).
+
+Analyzing hierarchy for entity <acctop> in library <work> (architecture <behavior>).
+
+Analyzing hierarchy for entity <debouncer> in library <work> (architecture <behavior>).
+
+Analyzing hierarchy for entity <edgedetector> in library <work> (architecture <behavior>).
+
+Analyzing hierarchy for entity <udcounter> in library <work> (architecture <behavior>).
+
+Analyzing hierarchy for entity <segdec> in library <work> (architecture <behavior>).
+
+Analyzing hierarchy for entity <seqcont> in library <work> (architecture <behavior>).
+
+Analyzing hierarchy for entity <datareg> in library <work> (architecture <behavior>).
+
+Analyzing hierarchy for entity <pngen> in library <work> (architecture <behavior>).
+
+Analyzing hierarchy for entity <mux> in library <work> (architecture <behavior>).
+
+
+=========================================================================
+*                            HDL Analysis                               *
+=========================================================================
+Analyzing Entity <transmitterTop> in library <work> (Architecture <behavior>).
+Entity <transmitterTop> analyzed. Unit <transmitterTop> generated.
+
+Analyzing Entity <clkDiv_tx> in library <work> (Architecture <behavior>).
+Entity <clkDiv_tx> analyzed. Unit <clkDiv_tx> generated.
+
+Analyzing Entity <apptop> in library <work> (Architecture <behavior>).
+Entity <apptop> analyzed. Unit <apptop> generated.
+
+Analyzing Entity <debouncer> in library <work> (Architecture <behavior>).
+Entity <debouncer> analyzed. Unit <debouncer> generated.
+
+Analyzing Entity <edgedetector> in library <work> (Architecture <behavior>).
+Entity <edgedetector> analyzed. Unit <edgedetector> generated.
+
+Analyzing Entity <udcounter> in library <work> (Architecture <behavior>).
+Entity <udcounter> analyzed. Unit <udcounter> generated.
+
+Analyzing Entity <segdec> in library <work> (Architecture <behavior>).
+INFO:Xst:1561 - "E:/Pieter-Jan Steeman/Project/Xilinx/Zender/segdec.vhd" line 36: Mux is complete : default of case is discarded
+Entity <segdec> analyzed. Unit <segdec> generated.
+
+Analyzing Entity <datatop> in library <work> (Architecture <behavior>).
+Entity <datatop> analyzed. Unit <datatop> generated.
+
+Analyzing Entity <seqcont> in library <work> (Architecture <behavior>).
+Entity <seqcont> analyzed. Unit <seqcont> generated.
+
+Analyzing Entity <datareg> in library <work> (Architecture <behavior>).
+Entity <datareg> analyzed. Unit <datareg> generated.
+
+Analyzing Entity <acctop> in library <work> (Architecture <behavior>).
+Entity <acctop> analyzed. Unit <acctop> generated.
+
+Analyzing Entity <pngen> in library <work> (Architecture <behavior>).
+Entity <pngen> analyzed. Unit <pngen> generated.
+
+Analyzing Entity <mux> in library <work> (Architecture <behavior>).
+INFO:Xst:1561 - "E:/Pieter-Jan Steeman/Project/Xilinx/Zender/mux.vhd" line 24: Mux is complete : default of case is discarded
+Entity <mux> analyzed. Unit <mux> generated.
+
+
+=========================================================================
+*                           HDL Synthesis                               *
+=========================================================================
+
+Performing bidirectional port resolution...
+
+Synthesizing Unit <clkDiv_tx>.
+    Related source file is "E:/Pieter-Jan Steeman/Project/Xilinx/Zender/clkDivTx.vhd".
+    Found 1-bit register for signal <enable>.
+    Found 15-bit adder for signal <next_enable$addsub0000> created at line 41.
+    Found 15-bit up counter for signal <pres_count>.
+    Summary:
+	inferred   1 Counter(s).
+	inferred   1 D-type flip-flop(s).
+	inferred   1 Adder/Subtractor(s).
+Unit <clkDiv_tx> synthesized.
+
+
+Synthesizing Unit <debouncer>.
+    Related source file is "E:/Pieter-Jan Steeman/Project/Xilinx/Zender/debouncer.vhd".
+    Found 4-bit register for signal <pres_shift>.
+    Found 1-bit xor2 for signal <sh_ldb>.
+    Summary:
+	inferred   4 D-type flip-flop(s).
+Unit <debouncer> synthesized.
+
+
+Synthesizing Unit <edgedetector>.
+    Related source file is "E:/Pieter-Jan Steeman/Project/Xilinx/Zender/edgedetector.vhd".
+    Using one-hot encoding for signal <pres_state>.
+    Found 3-bit register for signal <pres_state>.
+    Summary:
+	inferred   3 D-type flip-flop(s).
+Unit <edgedetector> synthesized.
+
+
+Synthesizing Unit <udcounter>.
+    Related source file is "E:/Pieter-Jan Steeman/Project/Xilinx/Zender/udcounter.vhd".
+    Found 4-bit updown counter for signal <pres_count>.
+    Summary:
+	inferred   1 Counter(s).
+Unit <udcounter> synthesized.
+
+
+Synthesizing Unit <segdec>.
+    Related source file is "E:/Pieter-Jan Steeman/Project/Xilinx/Zender/segdec.vhd".
+    Found 16x7-bit ROM for signal <uitgang_b>.
+    Summary:
+	inferred   1 ROM(s).
+Unit <segdec> synthesized.
+
+
+Synthesizing Unit <seqcont>.
+    Related source file is "E:/Pieter-Jan Steeman/Project/Xilinx/Zender/seqcont.vhd".
+    Found 1-bit register for signal <shift>.
+    Found 1-bit register for signal <load>.
+    Found 4-bit up counter for signal <pres_count>.
+    Summary:
+	inferred   1 Counter(s).
+	inferred   2 D-type flip-flop(s).
+Unit <seqcont> synthesized.
+
+
+Synthesizing Unit <datareg>.
+    Related source file is "E:/Pieter-Jan Steeman/Project/Xilinx/Zender/datareg.vhd".
+    Found 11-bit register for signal <pres_data>.
+    Summary:
+	inferred  11 D-type flip-flop(s).
+Unit <datareg> synthesized.
+
+
+Synthesizing Unit <pngen>.
+    Related source file is "E:/Pieter-Jan Steeman/Project/Xilinx/Zender/pngen.vhd".
+    Found 1-bit xor2 for signal <pn_gold>.
+    Found 1-bit xor2 for signal <next1$xor0000> created at line 33.
+    Found 1-bit xor4 for signal <next2$xor0000> created at line 34.
+    Found 5-bit register for signal <pres1>.
+    Found 5-bit register for signal <pres2>.
+    Summary:
+	inferred  10 D-type flip-flop(s).
+	inferred   1 Xor(s).
+Unit <pngen> synthesized.
+
+
+Synthesizing Unit <mux>.
+    Related source file is "E:/Pieter-Jan Steeman/Project/Xilinx/Zender/mux.vhd".
+    Found 1-bit 4-to-1 multiplexer for signal <sdo_spread>.
+    Summary:
+	inferred   1 Multiplexer(s).
+Unit <mux> synthesized.
+
+
+Synthesizing Unit <apptop>.
+    Related source file is "E:/Pieter-Jan Steeman/Project/Xilinx/Zender/ApplicationTop.vhd".
+Unit <apptop> synthesized.
+
+
+Synthesizing Unit <datatop>.
+    Related source file is "E:/Pieter-Jan Steeman/Project/Xilinx/Zender/DataTop.vhd".
+Unit <datatop> synthesized.
+
+
+Synthesizing Unit <acctop>.
+    Related source file is "E:/Pieter-Jan Steeman/Project/Xilinx/Zender/AccessTop.vhd".
+    Found 1-bit xor2 for signal <xor1>.
+    Found 1-bit xor2 for signal <xor2>.
+    Found 1-bit xor2 for signal <xor3>.
+Unit <acctop> synthesized.
+
+
+Synthesizing Unit <transmitterTop>.
+    Related source file is "E:/Pieter-Jan Steeman/Project/Xilinx/Zender/TransmitterTop.vhd".
+Unit <transmitterTop> synthesized.
+
+
+=========================================================================
+HDL Synthesis Report
+
+Macro Statistics
+# ROMs                                                 : 1
+ 16x7-bit ROM                                          : 1
+# Adders/Subtractors                                   : 1
+ 15-bit adder                                          : 1
+# Counters                                             : 3
+ 15-bit up counter                                     : 1
+ 4-bit up counter                                      : 1
+ 4-bit updown counter                                  : 1
+# Registers                                            : 10
+ 1-bit register                                        : 3
+ 11-bit register                                       : 1
+ 3-bit register                                        : 2
+ 4-bit register                                        : 2
+ 5-bit register                                        : 2
+# Multiplexers                                         : 1
+ 1-bit 4-to-1 multiplexer                              : 1
+# Xors                                                 : 8
+ 1-bit xor2                                            : 7
+ 1-bit xor4                                            : 1
+
+=========================================================================
+
+=========================================================================
+*                       Advanced HDL Synthesis                          *
+=========================================================================
+
+Loading device for application Rf_Device from file '2vp30.nph' in environment C:\Xilinx\10.1\ISE.
+
+=========================================================================
+Advanced HDL Synthesis Report
+
+Macro Statistics
+# ROMs                                                 : 1
+ 16x7-bit ROM                                          : 1
+# Adders/Subtractors                                   : 1
+ 15-bit adder                                          : 1
+# Counters                                             : 3
+ 15-bit up counter                                     : 1
+ 4-bit up counter                                      : 1
+ 4-bit updown counter                                  : 1
+# Registers                                            : 38
+ Flip-Flops                                            : 38
+# Multiplexers                                         : 1
+ 1-bit 4-to-1 multiplexer                              : 1
+# Xors                                                 : 8
+ 1-bit xor2                                            : 7
+ 1-bit xor4                                            : 1
+
+=========================================================================
+
+=========================================================================
+*                         Low Level Synthesis                           *
+=========================================================================
+
+Optimizing unit <transmitterTop> ...
+
+Optimizing unit <datareg> ...
+
+Optimizing unit <pngen> ...
+
+Mapping all equations...
+Building and optimizing final netlist ...
+Found area constraint ratio of 100 (+ 5) on block transmitterTop, actual ratio is 0.
+
+Final Macro Processing ...
+
+=========================================================================
+Final Register Report
+
+Macro Statistics
+# Registers                                            : 61
+ Flip-Flops                                            : 61
+
+=========================================================================
+
+=========================================================================
+*                           Partition Report                             *
+=========================================================================
+
+Partition Implementation Status
+-------------------------------
+
+  No Partitions were found in this design.
+
+-------------------------------
+
+=========================================================================
+*                            Final Report                               *
+=========================================================================
+Final Results
+RTL Top Level Output File Name     : transmitterTop.ngr
+Top Level Output File Name         : transmitterTop
+Output Format                      : NGC
+Optimization Goal                  : Speed
+Keep Hierarchy                     : NO
+
+Design Statistics
+# IOs                              : 14
+
+Cell Usage :
+# BELS                             : 166
+#      GND                         : 1
+#      INV                         : 4
+#      LUT1                        : 28
+#      LUT2                        : 15
+#      LUT2_L                      : 1
+#      LUT3                        : 13
+#      LUT4                        : 42
+#      LUT4_L                      : 1
+#      MUXCY                       : 28
+#      MUXF5                       : 4
+#      VCC                         : 1
+#      XORCY                       : 28
+# FlipFlops/Latches                : 61
+#      FDE                         : 37
+#      FDR                         : 15
+#      FDRE                        : 8
+#      FDS                         : 1
+# Clock Buffers                    : 1
+#      BUFGP                       : 1
+# IO Buffers                       : 13
+#      IBUF                        : 5
+#      OBUF                        : 8
+=========================================================================
+
+Device utilization summary:
+---------------------------
+
+Selected Device : 2vp30ff896-7 
+
+ Number of Slices:                       56  out of  13696     0%  
+ Number of Slice Flip Flops:             61  out of  27392     0%  
+ Number of 4 input LUTs:                104  out of  27392     0%  
+ Number of IOs:                          14
+ Number of bonded IOBs:                  14  out of    556     2%  
+ Number of GCLKs:                         1  out of     16     6%  
+
+---------------------------
+Partition Resource Summary:
+---------------------------
+
+  No Partitions were found in this design.
+
+---------------------------
+
+
+=========================================================================
+TIMING REPORT
+
+NOTE: THESE TIMING NUMBERS ARE ONLY A SYNTHESIS ESTIMATE.
+      FOR ACCURATE TIMING INFORMATION PLEASE REFER TO THE TRACE REPORT
+      GENERATED AFTER PLACE-and-ROUTE.
+
+Clock Information:
+------------------
+-----------------------------------+------------------------+-------+
+Clock Signal                       | Clock buffer(FF name)  | Load  |
+-----------------------------------+------------------------+-------+
+clk                                | BUFGP                  | 61    |
+-----------------------------------+------------------------+-------+
+
+Asynchronous Control Signals Information:
+----------------------------------------
+No asynchronous control signals found in this design
+
+Timing Summary:
+---------------
+Speed Grade: -7
+
+   Minimum period: 4.223ns (Maximum Frequency: 236.812MHz)
+   Minimum input arrival time before clock: 4.322ns
+   Maximum output required time after clock: 4.386ns
+   Maximum combinational path delay: 4.894ns
+
+Timing Detail:
+--------------
+All values displayed in nanoseconds (ns)
+
+=========================================================================
+Timing constraint: Default period analysis for Clock 'clk'
+  Clock period: 4.223ns (frequency: 236.812MHz)
+  Total number of paths / destination ports: 511 / 112
+-------------------------------------------------------------------------
+Delay:               4.223ns (Levels of Logic = 14)
+  Source:            deler/pres_count_1 (FF)
+  Destination:       deler/enable (FF)
+  Source Clock:      clk rising
+  Destination Clock: clk rising
+
+  Data Path: deler/pres_count_1 to deler/enable
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDR:C->Q              2   0.370   0.514  deler/pres_count_1 (deler/pres_count_1)
+     LUT1:I0->O            1   0.275   0.000  deler/Madd_next_enable_addsub0000_cy<1>_rt (deler/Madd_next_enable_addsub0000_cy<1>_rt)
+     MUXCY:S->O            1   0.334   0.000  deler/Madd_next_enable_addsub0000_cy<1> (deler/Madd_next_enable_addsub0000_cy<1>)
+     MUXCY:CI->O           1   0.036   0.000  deler/Madd_next_enable_addsub0000_cy<2> (deler/Madd_next_enable_addsub0000_cy<2>)
+     MUXCY:CI->O           1   0.036   0.000  deler/Madd_next_enable_addsub0000_cy<3> (deler/Madd_next_enable_addsub0000_cy<3>)
+     MUXCY:CI->O           1   0.036   0.000  deler/Madd_next_enable_addsub0000_cy<4> (deler/Madd_next_enable_addsub0000_cy<4>)
+     MUXCY:CI->O           1   0.036   0.000  deler/Madd_next_enable_addsub0000_cy<5> (deler/Madd_next_enable_addsub0000_cy<5>)
+     MUXCY:CI->O           1   0.036   0.000  deler/Madd_next_enable_addsub0000_cy<6> (deler/Madd_next_enable_addsub0000_cy<6>)
+     MUXCY:CI->O           1   0.036   0.000  deler/Madd_next_enable_addsub0000_cy<7> (deler/Madd_next_enable_addsub0000_cy<7>)
+     MUXCY:CI->O           1   0.036   0.000  deler/Madd_next_enable_addsub0000_cy<8> (deler/Madd_next_enable_addsub0000_cy<8>)
+     MUXCY:CI->O           1   0.036   0.000  deler/Madd_next_enable_addsub0000_cy<9> (deler/Madd_next_enable_addsub0000_cy<9>)
+     MUXCY:CI->O           1   0.036   0.000  deler/Madd_next_enable_addsub0000_cy<10> (deler/Madd_next_enable_addsub0000_cy<10>)
+     XORCY:CI->O           1   0.708   0.467  deler/Madd_next_enable_addsub0000_xor<11> (deler/next_enable_addsub0000<11>)
+     LUT2:I0->O            1   0.275   0.468  deler/next_enable_cmp_eq00000 (deler/next_enable_cmp_eq00000)
+     LUT4:I0->O            1   0.275   0.000  deler/next_enable_cmp_eq000036 (deler/next_enable)
+     FDS:D                     0.208          deler/enable
+    ----------------------------------------
+    Total                      4.223ns (2.774ns logic, 1.449ns route)
+                                       (65.7% logic, 34.3% route)
+
+=========================================================================
+Timing constraint: Default OFFSET IN BEFORE for Clock 'clk'
+  Total number of paths / destination ports: 91 / 80
+-------------------------------------------------------------------------
+Offset:              4.322ns (Levels of Logic = 4)
+  Source:            rst (PAD)
+  Destination:       dat_int/seqcont_int/pres_count_0 (FF)
+  Destination Clock: clk rising
+
+  Data Path: rst to dat_int/seqcont_int/pres_count_0
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     IBUF:I->O            44   0.878   0.824  rst_IBUF (deler_not0000_inv)
+     LUT3:I0->O            1   0.275   0.370  dat_int/seqcont_int/pres_count_and00001_SW0_SW0 (N14)
+     LUT4:I3->O            2   0.275   0.476  dat_int/seqcont_int/pres_count_and00001 (dat_int/seqcont_int/load_mux0001)
+     LUT2:I1->O            4   0.275   0.413  dat_int/seqcont_int/pres_count_and00002 (dat_int/seqcont_int/pres_count_and0000)
+     FDRE:R                    0.536          dat_int/seqcont_int/pres_count_0
+    ----------------------------------------
+    Total                      4.322ns (2.239ns logic, 2.083ns route)
+                                       (51.8% logic, 48.2% route)
+
+=========================================================================
+Timing constraint: Default OFFSET OUT AFTER for Clock 'clk'
+  Total number of paths / destination ports: 33 / 8
+-------------------------------------------------------------------------
+Offset:              4.386ns (Levels of Logic = 3)
+  Source:            acc_int/int_pngen/pres2_0 (FF)
+  Destination:       sdo_spread (PAD)
+  Source Clock:      clk rising
+
+  Data Path: acc_int/int_pngen/pres2_0 to sdo_spread
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDE:C->Q              2   0.370   0.514  acc_int/int_pngen/pres2_0 (acc_int/int_pngen/pres2_0)
+     LUT4:I0->O            1   0.275   0.000  acc_int/int_mux/Mmux_sdo_spread_2_f52 (acc_int/int_mux/Mmux_sdo_spread_2_f51)
+     MUXF5:I0->O           1   0.303   0.332  acc_int/int_mux/Mmux_sdo_spread_2_f5_f5 (sdo_spread_OBUF)
+     OBUF:I->O                 2.592          sdo_spread_OBUF (sdo_spread)
+    ----------------------------------------
+    Total                      4.386ns (3.540ns logic, 0.846ns route)
+                                       (80.7% logic, 19.3% route)
+
+=========================================================================
+Timing constraint: Default path analysis
+  Total number of paths / destination ports: 3 / 1
+-------------------------------------------------------------------------
+Delay:               4.894ns (Levels of Logic = 4)
+  Source:            dip<0> (PAD)
+  Destination:       sdo_spread (PAD)
+
+  Data Path: dip<0> to sdo_spread
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     IBUF:I->O             2   0.878   0.514  dip_0_IBUF (dip_0_IBUF)
+     LUT3:I0->O            1   0.275   0.000  acc_int/int_mux/Mmux_sdo_spread_2_f51 (acc_int/int_mux/Mmux_sdo_spread_2_f5)
+     MUXF5:I1->O           1   0.303   0.332  acc_int/int_mux/Mmux_sdo_spread_2_f5_f5 (sdo_spread_OBUF)
+     OBUF:I->O                 2.592          sdo_spread_OBUF (sdo_spread)
+    ----------------------------------------
+    Total                      4.894ns (4.048ns logic, 0.846ns route)
+                                       (82.7% logic, 17.3% route)
+
+=========================================================================
+
+
+Total REAL time to Xst completion: 4.00 secs
+Total CPU time to Xst completion: 3.65 secs
+ 
+--> 
+
+Total memory usage is 259024 kilobytes
+
+Number of errors   :    0 (   0 filtered)
+Number of warnings :    0 (   0 filtered)
+Number of infos    :    2 (   0 filtered)
+

@@ -1,0 +1,682 @@
+Release 10.1 - xst K.31 (nt)
+Copyright (c) 1995-2008 Xilinx, Inc.  All rights reserved.
+--> Parameter TMPDIR set to E:/Pieter-Jan Steeman/Project/Xilinx/Receiver/xst/projnav.tmp
+
+
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.08 secs
+ 
+--> Parameter xsthdpdir set to E:/Pieter-Jan Steeman/Project/Xilinx/Receiver/xst
+
+
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.08 secs
+ 
+--> Reading design: receiverTop_rx.prj
+
+TABLE OF CONTENTS
+  1) Synthesis Options Summary
+  2) HDL Compilation
+  3) Design Hierarchy Analysis
+  4) HDL Analysis
+  5) HDL Synthesis
+     5.1) HDL Synthesis Report
+  6) Advanced HDL Synthesis
+     6.1) Advanced HDL Synthesis Report
+  7) Low Level Synthesis
+  8) Partition Report
+  9) Final Report
+     9.1) Device utilization summary
+     9.2) Partition Resource Summary
+     9.3) TIMING REPORT
+
+
+=========================================================================
+*                      Synthesis Options Summary                        *
+=========================================================================
+---- Source Parameters
+Input File Name                    : "receiverTop_rx.prj"
+Input Format                       : mixed
+Ignore Synthesis Constraint File   : NO
+
+---- Target Parameters
+Output File Name                   : "receiverTop_rx"
+Output Format                      : NGC
+Target Device                      : xc2vp30-7-ff896
+
+---- Source Options
+Top Module Name                    : receiverTop_rx
+Automatic FSM Extraction           : YES
+FSM Encoding Algorithm             : Auto
+Safe Implementation                : No
+FSM Style                          : lut
+RAM Extraction                     : Yes
+RAM Style                          : Auto
+ROM Extraction                     : Yes
+Mux Style                          : Auto
+Decoder Extraction                 : YES
+Priority Encoder Extraction        : YES
+Shift Register Extraction          : YES
+Logical Shifter Extraction         : YES
+XOR Collapsing                     : YES
+ROM Style                          : Auto
+Mux Extraction                     : YES
+Resource Sharing                   : YES
+Asynchronous To Synchronous        : NO
+Multiplier Style                   : auto
+Automatic Register Balancing       : No
+
+---- Target Options
+Add IO Buffers                     : YES
+Global Maximum Fanout              : 500
+Add Generic Clock Buffer(BUFG)     : 16
+Register Duplication               : YES
+Slice Packing                      : YES
+Optimize Instantiated Primitives   : NO
+Convert Tristates To Logic         : Yes
+Use Clock Enable                   : Yes
+Use Synchronous Set                : Yes
+Use Synchronous Reset              : Yes
+Pack IO Registers into IOBs        : auto
+Equivalent register Removal        : YES
+
+---- General Options
+Optimization Goal                  : Speed
+Optimization Effort                : 1
+Library Search Order               : receiverTop_rx.lso
+Keep Hierarchy                     : NO
+Netlist Hierarchy                  : as_optimized
+RTL Output                         : Yes
+Global Optimization                : AllClockNets
+Read Cores                         : YES
+Write Timing Constraints           : NO
+Cross Clock Analysis               : NO
+Hierarchy Separator                : /
+Bus Delimiter                      : <>
+Case Specifier                     : maintain
+Slice Utilization Ratio            : 100
+BRAM Utilization Ratio             : 100
+Verilog 2001                       : YES
+Auto BRAM Packing                  : NO
+Slice Utilization Ratio Delta      : 5
+
+=========================================================================
+
+
+=========================================================================
+*                          HDL Compilation                              *
+=========================================================================
+Compiling vhdl file "E:/Pieter-Jan Steeman/Project/Xilinx/Receiver/dpll.vhd" in Library work.
+Architecture behavior of Entity dpll_rx is up to date.
+Compiling vhdl file "E:/Pieter-Jan Steeman/Project/Xilinx/Receiver/mfilter.vhd" in Library work.
+Architecture behavior of Entity mfilter_rx is up to date.
+Compiling vhdl file "E:/Pieter-Jan Steeman/Project/Xilinx/Receiver/mux.vhd" in Library work.
+Architecture behavior of Entity mux_rx is up to date.
+Compiling vhdl file "E:/Pieter-Jan Steeman/Project/Xilinx/Receiver/pngen_nco.vhd" in Library work.
+Architecture behavior of Entity pngen_rx is up to date.
+Compiling vhdl file "E:/Pieter-Jan Steeman/Project/Xilinx/Receiver/edgedetector.vhd" in Library work.
+Architecture behavior of Entity edgedetector_rx is up to date.
+Compiling vhdl file "E:/Pieter-Jan Steeman/Project/Xilinx/Receiver/despreader.vhd" in Library work.
+Architecture behavior of Entity despreader_rx is up to date.
+Compiling vhdl file "E:/Pieter-Jan Steeman/Project/Xilinx/Receiver/correlator.vhd" in Library work.
+Architecture behavior of Entity correlator_rx is up to date.
+Compiling vhdl file "E:/Pieter-Jan Steeman/Project/Xilinx/Receiver/latch.vhd" in Library work.
+Architecture behavior of Entity latch_rx is up to date.
+Compiling vhdl file "E:/Pieter-Jan Steeman/Project/Xilinx/Receiver/segdec.vhd" in Library work.
+Architecture behavior of Entity segdec_rx is up to date.
+Compiling vhdl file "E:/Pieter-Jan Steeman/Project/Xilinx/Receiver/clkDivRx.vhd" in Library work.
+Architecture behavior of Entity clkdiv_rx is up to date.
+Compiling vhdl file "E:/Pieter-Jan Steeman/Project/Xilinx/Receiver/ApplicationTop.vhd" in Library work.
+Entity <apptop_rx> compiled.
+Entity <apptop_rx> (Architecture <behavior>) compiled.
+Compiling vhdl file "E:/Pieter-Jan Steeman/Project/Xilinx/Receiver/shiftreg.vhd" in Library work.
+Architecture behavior of Entity shiftreg_rx is up to date.
+Compiling vhdl file "E:/Pieter-Jan Steeman/Project/Xilinx/Receiver/AccessTop.vhd" in Library work.
+Architecture behavior of Entity acctop_rx is up to date.
+Compiling vhdl file "E:/Pieter-Jan Steeman/Project/Xilinx/Receiver/ReceiverTop.vhd" in Library work.
+Entity <receivertop_rx> compiled.
+Entity <receivertop_rx> (Architecture <behavior>) compiled.
+
+=========================================================================
+*                     Design Hierarchy Analysis                         *
+=========================================================================
+Analyzing hierarchy for entity <receiverTop_rx> in library <work> (architecture <behavior>).
+
+Analyzing hierarchy for entity <clkDiv_rx> in library <work> (architecture <behavior>).
+
+Analyzing hierarchy for entity <apptop_rx> in library <work> (architecture <behavior>).
+
+Analyzing hierarchy for entity <shiftreg_rx> in library <work> (architecture <behavior>).
+
+Analyzing hierarchy for entity <acctop_rx> in library <work> (architecture <behavior>).
+
+Analyzing hierarchy for entity <latch_rx> in library <work> (architecture <behavior>).
+
+Analyzing hierarchy for entity <segdec_rx> in library <work> (architecture <behavior>).
+
+Analyzing hierarchy for entity <dpll_rx> in library <work> (architecture <behavior>).
+
+Analyzing hierarchy for entity <mfilter_rx> in library <work> (architecture <behavior>).
+
+Analyzing hierarchy for entity <mux_rx> in library <work> (architecture <behavior>).
+
+Analyzing hierarchy for entity <pngen_rx> in library <work> (architecture <behavior>).
+
+Analyzing hierarchy for entity <edgedetector_rx> in library <work> (architecture <behavior>).
+
+Analyzing hierarchy for entity <despreader_rx> in library <work> (architecture <behavior>).
+
+Analyzing hierarchy for entity <correlator_rx> in library <work> (architecture <behavior>).
+
+
+=========================================================================
+*                            HDL Analysis                               *
+=========================================================================
+Analyzing Entity <receiverTop_rx> in library <work> (Architecture <behavior>).
+Entity <receiverTop_rx> analyzed. Unit <receiverTop_rx> generated.
+
+Analyzing Entity <clkDiv_rx> in library <work> (Architecture <behavior>).
+Entity <clkDiv_rx> analyzed. Unit <clkDiv_rx> generated.
+
+Analyzing Entity <apptop_rx> in library <work> (Architecture <behavior>).
+Entity <apptop_rx> analyzed. Unit <apptop_rx> generated.
+
+Analyzing Entity <latch_rx> in library <work> (Architecture <behavior>).
+WARNING:Xst:819 - "E:/Pieter-Jan Steeman/Project/Xilinx/Receiver/latch.vhd" line 37: One or more signals are missing in the process sensitivity list. To enable synthesis of FPGA/CPLD hardware, XST will assume that all necessary signals are present in the sensitivity list. Please note that the result of the synthesis may differ from the initial design specification. The missing signals are:
+   <pres_latch>
+Entity <latch_rx> analyzed. Unit <latch_rx> generated.
+
+Analyzing Entity <segdec_rx> in library <work> (Architecture <behavior>).
+INFO:Xst:1561 - "E:/Pieter-Jan Steeman/Project/Xilinx/Receiver/segdec.vhd" line 36: Mux is complete : default of case is discarded
+Entity <segdec_rx> analyzed. Unit <segdec_rx> generated.
+
+Analyzing Entity <shiftreg_rx> in library <work> (Architecture <behavior>).
+Entity <shiftreg_rx> analyzed. Unit <shiftreg_rx> generated.
+
+Analyzing Entity <acctop_rx> in library <work> (Architecture <behavior>).
+Entity <acctop_rx> analyzed. Unit <acctop_rx> generated.
+
+Analyzing Entity <dpll_rx> in library <work> (Architecture <behavior>).
+Entity <dpll_rx> analyzed. Unit <dpll_rx> generated.
+
+Analyzing Entity <mfilter_rx> in library <work> (Architecture <behavior>).
+INFO:Xst:1561 - "E:/Pieter-Jan Steeman/Project/Xilinx/Receiver/mfilter.vhd" line 70: Mux is complete : default of case is discarded
+Entity <mfilter_rx> analyzed. Unit <mfilter_rx> generated.
+
+Analyzing Entity <mux_rx> in library <work> (Architecture <behavior>).
+INFO:Xst:1561 - "E:/Pieter-Jan Steeman/Project/Xilinx/Receiver/mux.vhd" line 24: Mux is complete : default of case is discarded
+Entity <mux_rx> analyzed. Unit <mux_rx> generated.
+
+Analyzing Entity <pngen_rx> in library <work> (Architecture <behavior>).
+Entity <pngen_rx> analyzed. Unit <pngen_rx> generated.
+
+Analyzing Entity <edgedetector_rx> in library <work> (Architecture <behavior>).
+Entity <edgedetector_rx> analyzed. Unit <edgedetector_rx> generated.
+
+Analyzing Entity <despreader_rx> in library <work> (Architecture <behavior>).
+Entity <despreader_rx> analyzed. Unit <despreader_rx> generated.
+
+Analyzing Entity <correlator_rx> in library <work> (Architecture <behavior>).
+Entity <correlator_rx> analyzed. Unit <correlator_rx> generated.
+
+
+=========================================================================
+*                           HDL Synthesis                               *
+=========================================================================
+
+Performing bidirectional port resolution...
+
+Synthesizing Unit <clkDiv_rx>.
+    Related source file is "E:/Pieter-Jan Steeman/Project/Xilinx/Receiver/clkDivRx.vhd".
+    Found 1-bit register for signal <enable>.
+    Found 11-bit up counter for signal <pres_count>.
+    Summary:
+	inferred   1 Counter(s).
+	inferred   1 D-type flip-flop(s).
+Unit <clkDiv_rx> synthesized.
+
+
+Synthesizing Unit <shiftreg_rx>.
+    Related source file is "E:/Pieter-Jan Steeman/Project/Xilinx/Receiver/shiftreg.vhd".
+    Found 11-bit register for signal <pres_data>.
+    Summary:
+	inferred  11 D-type flip-flop(s).
+Unit <shiftreg_rx> synthesized.
+
+
+Synthesizing Unit <latch_rx>.
+    Related source file is "E:/Pieter-Jan Steeman/Project/Xilinx/Receiver/latch.vhd".
+    Found 4-bit register for signal <pres_latch>.
+    Summary:
+	inferred   4 D-type flip-flop(s).
+Unit <latch_rx> synthesized.
+
+
+Synthesizing Unit <segdec_rx>.
+    Related source file is "E:/Pieter-Jan Steeman/Project/Xilinx/Receiver/segdec.vhd".
+    Found 16x7-bit ROM for signal <uitgang_b>.
+    Summary:
+	inferred   1 ROM(s).
+Unit <segdec_rx> synthesized.
+
+
+Synthesizing Unit <dpll_rx>.
+    Related source file is "E:/Pieter-Jan Steeman/Project/Xilinx/Receiver/dpll.vhd".
+    Using one-hot encoding for signal <pres_state_det>.
+INFO:Xst:2117 - HDL ADVISOR - Mux Selector <segment_out> of Case statement line 0 was re-encoded using one-hot encoding. The case statement will be optimized (default statement optimization), but this optimization may lead to design initialization problems. To ensure the design works safely, you can:
+   	- add an 'INIT' attribute on signal <segment_out> (optimization is then done without any risk)
+   	- use the attribute 'signal_encoding user' to avoid onehot optimization
+   	- use the attribute 'safe_implementation yes' to force XST to perform a safe (but less efficient) optimization
+    Using one-hot encoding for signal <segment_out>.
+    Found 1-bit register for signal <chip_sample1_int>.
+    Found 1-bit register for signal <chip_sample2_int>.
+    Found 4-bit adder for signal <next_count_dec$addsub0000> created at line 116.
+    Found 5-bit subtractor for signal <next_count_dec2$addsub0000> created at line 219.
+    Found 4-bit register for signal <pres_count_dec>.
+    Found 5-bit register for signal <pres_count_dec2>.
+    Found 4-bit register for signal <pres_state_det>.
+    Found 1-bit register for signal <pres_state_sema<0>>.
+    Found 4-bit comparator lessequal for signal <segment_in$cmp_le0000> created at line 125.
+    Found 4-bit comparator lessequal for signal <segment_in$cmp_le0001> created at line 126.
+    Found 4-bit comparator lessequal for signal <segment_in$cmp_le0002> created at line 128.
+    Found 4-bit comparator lessequal for signal <segment_in$cmp_le0003> created at line 130.
+    Summary:
+	inferred  16 D-type flip-flop(s).
+	inferred   2 Adder/Subtractor(s).
+	inferred   4 Comparator(s).
+Unit <dpll_rx> synthesized.
+
+
+Synthesizing Unit <mfilter_rx>.
+    Related source file is "E:/Pieter-Jan Steeman/Project/Xilinx/Receiver/mfilter.vhd".
+    Found 4x31-bit ROM for signal <pn>.
+    Found 31-bit comparator equal for signal <next_seq$cmp_eq0000> created at line 50.
+    Found 31-bit comparator equal for signal <next_seq$cmp_eq0001> created at line 50.
+    Found 31-bit register for signal <pres_reg>.
+    Found 1-bit register for signal <pres_seq>.
+    Summary:
+	inferred   1 ROM(s).
+	inferred  32 D-type flip-flop(s).
+	inferred   2 Comparator(s).
+Unit <mfilter_rx> synthesized.
+
+
+Synthesizing Unit <mux_rx>.
+    Related source file is "E:/Pieter-Jan Steeman/Project/Xilinx/Receiver/mux.vhd".
+    Found 1-bit 4-to-1 multiplexer for signal <sdo_spread>.
+    Summary:
+	inferred   1 Multiplexer(s).
+Unit <mux_rx> synthesized.
+
+
+Synthesizing Unit <pngen_rx>.
+    Related source file is "E:/Pieter-Jan Steeman/Project/Xilinx/Receiver/pngen_nco.vhd".
+    Found 1-bit xor2 for signal <pn_gold>.
+    Found 1-bit xor2 for signal <next1$xor0000> created at line 55.
+    Found 1-bit xor4 for signal <next2$xor0000> created at line 56.
+    Found 5-bit register for signal <pres1>.
+    Found 5-bit register for signal <pres2>.
+    Found 1-bit register for signal <pres_full_seq>.
+    Summary:
+	inferred  11 D-type flip-flop(s).
+	inferred   1 Xor(s).
+Unit <pngen_rx> synthesized.
+
+
+Synthesizing Unit <edgedetector_rx>.
+    Related source file is "E:/Pieter-Jan Steeman/Project/Xilinx/Receiver/edgedetector.vhd".
+    Using one-hot encoding for signal <pres_state>.
+    Found 3-bit register for signal <pres_state>.
+    Summary:
+	inferred   3 D-type flip-flop(s).
+Unit <edgedetector_rx> synthesized.
+
+
+Synthesizing Unit <despreader_rx>.
+    Related source file is "E:/Pieter-Jan Steeman/Project/Xilinx/Receiver/despreader.vhd".
+    Found 1-bit xor2 for signal <next_desp>.
+    Found 1-bit register for signal <pres_desp>.
+    Summary:
+	inferred   1 D-type flip-flop(s).
+Unit <despreader_rx> synthesized.
+
+
+Synthesizing Unit <correlator_rx>.
+    Related source file is "E:/Pieter-Jan Steeman/Project/Xilinx/Receiver/correlator.vhd".
+WARNING:Xst:737 - Found 1-bit latch for signal <data_out>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+    Found 6-bit updown counter for signal <pres_count>.
+    Summary:
+	inferred   1 Counter(s).
+Unit <correlator_rx> synthesized.
+
+
+Synthesizing Unit <apptop_rx>.
+    Related source file is "E:/Pieter-Jan Steeman/Project/Xilinx/Receiver/ApplicationTop.vhd".
+Unit <apptop_rx> synthesized.
+
+
+Synthesizing Unit <acctop_rx>.
+    Related source file is "E:/Pieter-Jan Steeman/Project/Xilinx/Receiver/AccessTop.vhd".
+Unit <acctop_rx> synthesized.
+
+
+Synthesizing Unit <receiverTop_rx>.
+    Related source file is "E:/Pieter-Jan Steeman/Project/Xilinx/Receiver/ReceiverTop.vhd".
+Unit <receiverTop_rx> synthesized.
+
+
+=========================================================================
+HDL Synthesis Report
+
+Macro Statistics
+# ROMs                                                 : 2
+ 16x7-bit ROM                                          : 1
+ 4x31-bit ROM                                          : 1
+# Adders/Subtractors                                   : 2
+ 4-bit adder                                           : 1
+ 5-bit subtractor                                      : 1
+# Counters                                             : 2
+ 11-bit up counter                                     : 1
+ 6-bit updown counter                                  : 1
+# Registers                                            : 16
+ 1-bit register                                        : 7
+ 11-bit register                                       : 1
+ 3-bit register                                        : 1
+ 31-bit register                                       : 1
+ 4-bit register                                        : 3
+ 5-bit register                                        : 3
+# Latches                                              : 1
+ 1-bit latch                                           : 1
+# Comparators                                          : 6
+ 31-bit comparator equal                               : 2
+ 4-bit comparator lessequal                            : 4
+# Multiplexers                                         : 3
+ 1-bit 4-to-1 multiplexer                              : 3
+# Xors                                                 : 4
+ 1-bit xor2                                            : 3
+ 1-bit xor4                                            : 1
+
+=========================================================================
+
+=========================================================================
+*                       Advanced HDL Synthesis                          *
+=========================================================================
+
+Loading device for application Rf_Device from file '2vp30.nph' in environment C:\Xilinx\10.1\ISE.
+
+=========================================================================
+Advanced HDL Synthesis Report
+
+Macro Statistics
+# ROMs                                                 : 2
+ 16x7-bit ROM                                          : 1
+ 4x31-bit ROM                                          : 1
+# Adders/Subtractors                                   : 2
+ 4-bit adder                                           : 1
+ 5-bit subtractor                                      : 1
+# Counters                                             : 2
+ 11-bit up counter                                     : 1
+ 6-bit updown counter                                  : 1
+# Registers                                            : 79
+ Flip-Flops                                            : 79
+# Latches                                              : 1
+ 1-bit latch                                           : 1
+# Comparators                                          : 6
+ 31-bit comparator equal                               : 2
+ 4-bit comparator lessequal                            : 4
+# Multiplexers                                         : 3
+ 1-bit 4-to-1 multiplexer                              : 3
+# Xors                                                 : 4
+ 1-bit xor2                                            : 3
+ 1-bit xor4                                            : 1
+
+=========================================================================
+
+=========================================================================
+*                         Low Level Synthesis                           *
+=========================================================================
+
+Optimizing unit <receiverTop_rx> ...
+
+Optimizing unit <shiftreg_rx> ...
+
+Optimizing unit <dpll_rx> ...
+
+Optimizing unit <mfilter_rx> ...
+
+Optimizing unit <pngen_rx> ...
+
+Mapping all equations...
+Building and optimizing final netlist ...
+Found area constraint ratio of 100 (+ 5) on block receiverTop_rx, actual ratio is 0.
+
+Final Macro Processing ...
+
+=========================================================================
+Final Register Report
+
+Macro Statistics
+# Registers                                            : 96
+ Flip-Flops                                            : 96
+
+=========================================================================
+
+=========================================================================
+*                           Partition Report                             *
+=========================================================================
+
+Partition Implementation Status
+-------------------------------
+
+  No Partitions were found in this design.
+
+-------------------------------
+
+=========================================================================
+*                            Final Report                               *
+=========================================================================
+Final Results
+RTL Top Level Output File Name     : receiverTop_rx.ngr
+Top Level Output File Name         : receiverTop_rx
+Output Format                      : NGC
+Optimization Goal                  : Speed
+Keep Hierarchy                     : NO
+
+Design Statistics
+# IOs                              : 12
+
+Cell Usage :
+# BELS                             : 243
+#      GND                         : 1
+#      INV                         : 4
+#      LUT1                        : 10
+#      LUT2                        : 53
+#      LUT2_D                      : 2
+#      LUT2_L                      : 3
+#      LUT3                        : 25
+#      LUT3_D                      : 2
+#      LUT3_L                      : 5
+#      LUT4                        : 74
+#      LUT4_D                      : 1
+#      LUT4_L                      : 7
+#      MUXCY                       : 42
+#      MUXF5                       : 3
+#      VCC                         : 1
+#      XORCY                       : 10
+# FlipFlops/Latches                : 97
+#      FDE                         : 84
+#      FDR                         : 11
+#      FDS                         : 1
+#      LD                          : 1
+# Clock Buffers                    : 1
+#      BUFGP                       : 1
+# IO Buffers                       : 11
+#      IBUF                        : 4
+#      OBUF                        : 7
+=========================================================================
+
+Device utilization summary:
+---------------------------
+
+Selected Device : 2vp30ff896-7 
+
+ Number of Slices:                       98  out of  13696     0%  
+ Number of Slice Flip Flops:             97  out of  27392     0%  
+ Number of 4 input LUTs:                186  out of  27392     0%  
+ Number of IOs:                          12
+ Number of bonded IOBs:                  12  out of    556     2%  
+ Number of GCLKs:                         1  out of     16     6%  
+
+---------------------------
+Partition Resource Summary:
+---------------------------
+
+  No Partitions were found in this design.
+
+---------------------------
+
+
+=========================================================================
+TIMING REPORT
+
+NOTE: THESE TIMING NUMBERS ARE ONLY A SYNTHESIS ESTIMATE.
+      FOR ACCURATE TIMING INFORMATION PLEASE REFER TO THE TRACE REPORT
+      GENERATED AFTER PLACE-and-ROUTE.
+
+Clock Information:
+------------------
+-----------------------------------+-----------------------------------+-------+
+Clock Signal                       | Clock buffer(FF name)             | Load  |
+-----------------------------------+-----------------------------------+-------+
+clk                                | BUFGP                             | 96    |
+acc_int/int_edge_rx/pres_state_1   | NONE(acc_int/int_corr_rx/data_out)| 1     |
+-----------------------------------+-----------------------------------+-------+
+INFO:Xst:2169 - HDL ADVISOR - Some clock signals were not automatically buffered by XST with BUFG/BUFR resources. Please use the buffer_type constraint in order to insert these buffers to the clock signals to help prevent skew problems.
+
+Asynchronous Control Signals Information:
+----------------------------------------
+No asynchronous control signals found in this design
+
+Timing Summary:
+---------------
+Speed Grade: -7
+
+   Minimum period: 3.253ns (Maximum Frequency: 307.413MHz)
+   Minimum input arrival time before clock: 4.895ns
+   Maximum output required time after clock: 4.169ns
+   Maximum combinational path delay: No path found
+
+Timing Detail:
+--------------
+All values displayed in nanoseconds (ns)
+
+=========================================================================
+Timing constraint: Default period analysis for Clock 'clk'
+  Clock period: 3.253ns (frequency: 307.413MHz)
+  Total number of paths / destination ports: 741 / 178
+-------------------------------------------------------------------------
+Delay:               3.253ns (Levels of Logic = 18)
+  Source:            acc_int/int_mfilter_rx/pres_reg_1 (FF)
+  Destination:       acc_int/int_mfilter_rx/pres_seq (FF)
+  Source Clock:      clk rising
+  Destination Clock: clk rising
+
+  Data Path: acc_int/int_mfilter_rx/pres_reg_1 to acc_int/int_mfilter_rx/pres_seq
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDE:C->Q              3   0.370   0.435  acc_int/int_mfilter_rx/pres_reg_1 (acc_int/int_mfilter_rx/pres_reg_1)
+     LUT4:I3->O            1   0.275   0.000  acc_int/int_mfilter_rx/Mcompar_next_seq_cmp_eq0001_lut<0> (acc_int/int_mfilter_rx/Mcompar_next_seq_cmp_eq0001_lut<0>)
+     MUXCY:S->O            1   0.334   0.000  acc_int/int_mfilter_rx/Mcompar_next_seq_cmp_eq0001_cy<0> (acc_int/int_mfilter_rx/Mcompar_next_seq_cmp_eq0001_cy<0>)
+     MUXCY:CI->O           1   0.036   0.000  acc_int/int_mfilter_rx/Mcompar_next_seq_cmp_eq0001_cy<1> (acc_int/int_mfilter_rx/Mcompar_next_seq_cmp_eq0001_cy<1>)
+     MUXCY:CI->O           1   0.036   0.000  acc_int/int_mfilter_rx/Mcompar_next_seq_cmp_eq0001_cy<2> (acc_int/int_mfilter_rx/Mcompar_next_seq_cmp_eq0001_cy<2>)
+     MUXCY:CI->O           1   0.036   0.000  acc_int/int_mfilter_rx/Mcompar_next_seq_cmp_eq0001_cy<3> (acc_int/int_mfilter_rx/Mcompar_next_seq_cmp_eq0001_cy<3>)
+     MUXCY:CI->O           1   0.036   0.000  acc_int/int_mfilter_rx/Mcompar_next_seq_cmp_eq0001_cy<4> (acc_int/int_mfilter_rx/Mcompar_next_seq_cmp_eq0001_cy<4>)
+     MUXCY:CI->O           1   0.036   0.000  acc_int/int_mfilter_rx/Mcompar_next_seq_cmp_eq0001_cy<5> (acc_int/int_mfilter_rx/Mcompar_next_seq_cmp_eq0001_cy<5>)
+     MUXCY:CI->O           1   0.036   0.000  acc_int/int_mfilter_rx/Mcompar_next_seq_cmp_eq0001_cy<6> (acc_int/int_mfilter_rx/Mcompar_next_seq_cmp_eq0001_cy<6>)
+     MUXCY:CI->O           1   0.036   0.000  acc_int/int_mfilter_rx/Mcompar_next_seq_cmp_eq0001_cy<7> (acc_int/int_mfilter_rx/Mcompar_next_seq_cmp_eq0001_cy<7>)
+     MUXCY:CI->O           1   0.036   0.000  acc_int/int_mfilter_rx/Mcompar_next_seq_cmp_eq0001_cy<8> (acc_int/int_mfilter_rx/Mcompar_next_seq_cmp_eq0001_cy<8>)
+     MUXCY:CI->O           1   0.036   0.000  acc_int/int_mfilter_rx/Mcompar_next_seq_cmp_eq0001_cy<9> (acc_int/int_mfilter_rx/Mcompar_next_seq_cmp_eq0001_cy<9>)
+     MUXCY:CI->O           1   0.036   0.000  acc_int/int_mfilter_rx/Mcompar_next_seq_cmp_eq0001_cy<10> (acc_int/int_mfilter_rx/Mcompar_next_seq_cmp_eq0001_cy<10>)
+     MUXCY:CI->O           1   0.036   0.000  acc_int/int_mfilter_rx/Mcompar_next_seq_cmp_eq0001_cy<11> (acc_int/int_mfilter_rx/Mcompar_next_seq_cmp_eq0001_cy<11>)
+     MUXCY:CI->O           1   0.036   0.000  acc_int/int_mfilter_rx/Mcompar_next_seq_cmp_eq0001_cy<12> (acc_int/int_mfilter_rx/Mcompar_next_seq_cmp_eq0001_cy<12>)
+     MUXCY:CI->O           1   0.036   0.000  acc_int/int_mfilter_rx/Mcompar_next_seq_cmp_eq0001_cy<13> (acc_int/int_mfilter_rx/Mcompar_next_seq_cmp_eq0001_cy<13>)
+     MUXCY:CI->O           1   0.036   0.000  acc_int/int_mfilter_rx/Mcompar_next_seq_cmp_eq0001_cy<14> (acc_int/int_mfilter_rx/Mcompar_next_seq_cmp_eq0001_cy<14>)
+     MUXCY:CI->O           1   0.416   0.430  acc_int/int_mfilter_rx/Mcompar_next_seq_cmp_eq0001_cy<15> (acc_int/int_mfilter_rx/Mcompar_next_seq_cmp_eq0001_cy<15>)
+     LUT3:I1->O            1   0.275   0.000  acc_int/int_mfilter_rx/pres_seq_mux00011 (acc_int/int_mfilter_rx/pres_seq_mux0001)
+     FDE:D                     0.208          acc_int/int_mfilter_rx/pres_seq
+    ----------------------------------------
+    Total                      3.253ns (2.388ns logic, 0.864ns route)
+                                       (73.4% logic, 26.6% route)
+
+=========================================================================
+Timing constraint: Default OFFSET IN BEFORE for Clock 'clk'
+  Total number of paths / destination ports: 278 / 150
+-------------------------------------------------------------------------
+Offset:              4.895ns (Levels of Logic = 19)
+  Source:            dip<0> (PAD)
+  Destination:       acc_int/int_mfilter_rx/pres_seq (FF)
+  Destination Clock: clk rising
+
+  Data Path: dip<0> to acc_int/int_mfilter_rx/pres_seq
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     IBUF:I->O            18   0.878   0.729  dip_0_IBUF (dip_0_IBUF)
+     LUT2:I0->O            7   0.275   0.601  acc_int/int_mfilter_rx/Mcompar_next_seq_not0000<11>11 (acc_int/int_mfilter_rx/Mcompar_next_seq_not0000<11>)
+     LUT4:I0->O            1   0.275   0.000  acc_int/int_mfilter_rx/Mcompar_next_seq_cmp_eq0001_lut<1> (acc_int/int_mfilter_rx/Mcompar_next_seq_cmp_eq0001_lut<1>)
+     MUXCY:S->O            1   0.334   0.000  acc_int/int_mfilter_rx/Mcompar_next_seq_cmp_eq0001_cy<1> (acc_int/int_mfilter_rx/Mcompar_next_seq_cmp_eq0001_cy<1>)
+     MUXCY:CI->O           1   0.036   0.000  acc_int/int_mfilter_rx/Mcompar_next_seq_cmp_eq0001_cy<2> (acc_int/int_mfilter_rx/Mcompar_next_seq_cmp_eq0001_cy<2>)
+     MUXCY:CI->O           1   0.036   0.000  acc_int/int_mfilter_rx/Mcompar_next_seq_cmp_eq0001_cy<3> (acc_int/int_mfilter_rx/Mcompar_next_seq_cmp_eq0001_cy<3>)
+     MUXCY:CI->O           1   0.036   0.000  acc_int/int_mfilter_rx/Mcompar_next_seq_cmp_eq0001_cy<4> (acc_int/int_mfilter_rx/Mcompar_next_seq_cmp_eq0001_cy<4>)
+     MUXCY:CI->O           1   0.036   0.000  acc_int/int_mfilter_rx/Mcompar_next_seq_cmp_eq0001_cy<5> (acc_int/int_mfilter_rx/Mcompar_next_seq_cmp_eq0001_cy<5>)
+     MUXCY:CI->O           1   0.036   0.000  acc_int/int_mfilter_rx/Mcompar_next_seq_cmp_eq0001_cy<6> (acc_int/int_mfilter_rx/Mcompar_next_seq_cmp_eq0001_cy<6>)
+     MUXCY:CI->O           1   0.036   0.000  acc_int/int_mfilter_rx/Mcompar_next_seq_cmp_eq0001_cy<7> (acc_int/int_mfilter_rx/Mcompar_next_seq_cmp_eq0001_cy<7>)
+     MUXCY:CI->O           1   0.036   0.000  acc_int/int_mfilter_rx/Mcompar_next_seq_cmp_eq0001_cy<8> (acc_int/int_mfilter_rx/Mcompar_next_seq_cmp_eq0001_cy<8>)
+     MUXCY:CI->O           1   0.036   0.000  acc_int/int_mfilter_rx/Mcompar_next_seq_cmp_eq0001_cy<9> (acc_int/int_mfilter_rx/Mcompar_next_seq_cmp_eq0001_cy<9>)
+     MUXCY:CI->O           1   0.036   0.000  acc_int/int_mfilter_rx/Mcompar_next_seq_cmp_eq0001_cy<10> (acc_int/int_mfilter_rx/Mcompar_next_seq_cmp_eq0001_cy<10>)
+     MUXCY:CI->O           1   0.036   0.000  acc_int/int_mfilter_rx/Mcompar_next_seq_cmp_eq0001_cy<11> (acc_int/int_mfilter_rx/Mcompar_next_seq_cmp_eq0001_cy<11>)
+     MUXCY:CI->O           1   0.036   0.000  acc_int/int_mfilter_rx/Mcompar_next_seq_cmp_eq0001_cy<12> (acc_int/int_mfilter_rx/Mcompar_next_seq_cmp_eq0001_cy<12>)
+     MUXCY:CI->O           1   0.036   0.000  acc_int/int_mfilter_rx/Mcompar_next_seq_cmp_eq0001_cy<13> (acc_int/int_mfilter_rx/Mcompar_next_seq_cmp_eq0001_cy<13>)
+     MUXCY:CI->O           1   0.036   0.000  acc_int/int_mfilter_rx/Mcompar_next_seq_cmp_eq0001_cy<14> (acc_int/int_mfilter_rx/Mcompar_next_seq_cmp_eq0001_cy<14>)
+     MUXCY:CI->O           1   0.416   0.430  acc_int/int_mfilter_rx/Mcompar_next_seq_cmp_eq0001_cy<15> (acc_int/int_mfilter_rx/Mcompar_next_seq_cmp_eq0001_cy<15>)
+     LUT3:I1->O            1   0.275   0.000  acc_int/int_mfilter_rx/pres_seq_mux00011 (acc_int/int_mfilter_rx/pres_seq_mux0001)
+     FDE:D                     0.208          acc_int/int_mfilter_rx/pres_seq
+    ----------------------------------------
+    Total                      4.895ns (3.135ns logic, 1.760ns route)
+                                       (64.0% logic, 36.0% route)
+
+=========================================================================
+Timing constraint: Default OFFSET OUT AFTER for Clock 'clk'
+  Total number of paths / destination ports: 28 / 7
+-------------------------------------------------------------------------
+Offset:              4.169ns (Levels of Logic = 2)
+  Source:            app_int/datalatch_rx/pres_latch_1 (FF)
+  Destination:       display_b<6> (PAD)
+  Source Clock:      clk rising
+
+  Data Path: app_int/datalatch_rx/pres_latch_1 to display_b<6>
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDE:C->Q              7   0.370   0.601  app_int/datalatch_rx/pres_latch_1 (app_int/datalatch_rx/pres_latch_1)
+     LUT4:I0->O            1   0.275   0.332  app_int/decoder_rx/Mrom_uitgang_b41 (app_int/decoder_rx/Mrom_uitgang_b4)
+     OBUF:I->O                 2.592          display_b_4_OBUF (display_b<4>)
+    ----------------------------------------
+    Total                      4.169ns (3.237ns logic, 0.932ns route)
+                                       (77.6% logic, 22.4% route)
+
+=========================================================================
+
+
+Total REAL time to Xst completion: 3.00 secs
+Total CPU time to Xst completion: 3.68 secs
+ 
+--> 
+
+Total memory usage is 260048 kilobytes
+
+Number of errors   :    0 (   0 filtered)
+Number of warnings :    2 (   0 filtered)
+Number of infos    :    5 (   0 filtered)
+

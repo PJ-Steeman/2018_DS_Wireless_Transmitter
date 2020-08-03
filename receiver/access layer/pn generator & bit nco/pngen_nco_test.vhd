@@ -1,0 +1,101 @@
+-- Pieter-Jan Steeman
+
+LIBRARY ieee;
+USE ieee.std_logic_1164.ALL;
+USE ieee.std_logic_unsigned.ALL;
+
+ENTITY pngen_rx_test IS
+END pngen_rx_test;
+
+ARCHITECTURE structural OF pngen_rx_test IS
+
+COMPONENT pngen_rx  -- component declaratie
+	PORT
+	(
+		clk        	: IN std_logic;
+		clk_en     	: IN std_logic;
+		rst        	: IN std_logic;
+		seq_det    	: IN std_logic;
+		chip_sample1	: IN std_logic;
+		bit_sample  	: OUT std_logic;
+		pn_ml1      	: OUT std_logic;
+		pn_ml2       	: OUT std_logic;
+		pn_gold      	: OUT std_logic
+	);
+END COMPONENT;
+
+FOR uut : pngen_rx USE ENTITY work.pngen_rx(behavior); -- signalen aanmaken die overeenkomen met de poorten
+  
+	CONSTANT period   	: TIME := 100 ns;
+	CONSTANT delay    	: TIME := 10 ns;
+	SIGNAL end_of_sim 	: BOOLEAN := false;
+	
+	SIGNAL clk        	: std_logic;
+	SIGNAL clk_en     	: std_logic;
+	SIGNAL rst        	: std_logic;
+	SIGNAL seq_det 		: std_logic;
+	SIGNAL chip_sample1 	: std_logic;
+	SIGNAL bit_sample	: std_logic;
+	SIGNAL pn_ml1    	: std_logic;
+	SIGNAL pn_ml2    	: std_logic;
+	SIGNAL pn_gold    	: std_logic;
+	
+BEGIN
+
+uut: pngen_rx PORT MAP -- ports aan signalen verbinden met port mapping
+    (
+      	clk    	   		=> clk,
+      	clk_en 		   	=> clk_en,
+      	rst    		   	=> rst,
+      	seq_det 		=> seq_det,
+      	chip_sample1 		=> chip_sample1,
+	bit_sample		=> bit_sample,
+	pn_ml1    		=> pn_ml1,
+	pn_ml2			=> pn_ml2,
+	pn_gold    		=> pn_gold
+    );
+
+clock : PROCESS -- kloksignaal aanmaken voor de synchrone elementen
+	BEGIN
+    	clk <= '0';
+    	WAIT FOR period/2;
+    	LOOP
+			clk <= '0';
+			WAIT FOR period/2;
+			clk <= '1';
+			WAIT FOR period/2;
+			EXIT WHEN end_of_sim;
+		END LOOP;
+	WAIT;
+  END PROCESS clock;
+
+tb : PROCESS -- testbench
+
+	PROCEDURE tbvector(CONSTANT stimvect : IN std_logic_vector(2 DOWNTO 0))IS -- test vector aanmaken
+	BEGIN	
+		seq_det <= stimvect(2);
+		chip_sample1 <= stimvect(1);
+		rst <= stimvect(0); -- inputs "linken" met de vector
+		WAIT FOR period;
+
+	END tbvector;
+	BEGIN	-- verschillende mogelijke scenario's aflopen
+
+		clk_en <= '1';
+		tbvector("011");
+		WAIT FOR period*5;
+		tbvector("010");
+		WAIT FOR period*15;
+		tbvector("110");
+		WAIT FOR period*5;	
+		tbvector("010");
+		WAIT FOR period*50;
+		
+		end_of_sim <= true;
+		WAIT;
+
+	END PROCESS;
+END;
+
+
+

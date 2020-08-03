@@ -1,0 +1,21 @@
+//! **************************************************************************
+// Written by: Map K.31 on Fri Dec 14 12:30:00 2018
+//! **************************************************************************
+
+SCHEMATIC START;
+COMP "clk" LOCATE = SITE "AJ15" LEVEL 1;
+COMP "dip<0>" LOCATE = SITE "N1" LEVEL 1;
+COMP "dip<1>" LOCATE = SITE "M3" LEVEL 1;
+COMP "sdo_spread" LOCATE = SITE "N6" LEVEL 1;
+COMP "display_b<0>" LOCATE = SITE "R8" LEVEL 1;
+COMP "display_b<1>" LOCATE = SITE "P5" LEVEL 1;
+COMP "display_b<2>" LOCATE = SITE "P4" LEVEL 1;
+COMP "display_b<3>" LOCATE = SITE "T2" LEVEL 1;
+COMP "display_b<4>" LOCATE = SITE "R2" LEVEL 1;
+COMP "display_b<5>" LOCATE = SITE "P2" LEVEL 1;
+COMP "display_b<6>" LOCATE = SITE "R7" LEVEL 1;
+COMP "rst" LOCATE = SITE "P7" LEVEL 1;
+NET "clk_BUFGP/IBUFG" BEL "clk_BUFGP/BUFG.GCLKMUX" USELOCALCONNECT;
+NET "clk_BUFGP/IBUFG" PERIOD = 10 ns HIGH 50%;
+SCHEMATIC END;
+

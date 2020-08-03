@@ -1,0 +1,121 @@
+-- Pieter-Jan Steeman
+
+LIBRARY ieee;
+USE ieee.std_logic_1164.ALL;
+USE ieee.std_logic_unsigned.ALL;
+
+ENTITY acctop_rx_test IS
+END acctop_rx_test;
+
+ARCHITECTURE structural of acctop_rx_test is
+
+COMPONENT acctop_rx
+   PORT 
+    (
+		clk     	 	: IN std_logic;			-- clock signaal
+		clk_en  	 	: IN std_logic;			-- clock enable om clock frequentie te verlagen
+		rst     	 	: IN std_logic;			-- reset
+		sdi_spread		: IN std_logic;
+		pn_sel			: IN std_logic_vector(1 DOWNTO 0); -- select PN code
+		bit_sample		: OUT std_logic;
+		databit			: OUT std_logic
+  );
+END COMPONENT;
+
+FOR uut : acctop_rx USE ENTITY work.acctop_rx(behavior); -- signalen aanmaken die overeenkomen met de poorten
+  
+	CONSTANT period   : TIME := 100 ns;
+	CONSTANT delay    : TIME := 10 ns;
+	SIGNAL end_of_sim : BOOLEAN := false;
+	
+	SIGNAL clk        : std_logic;
+	SIGNAL clk_en     : std_logic;
+	SIGNAL rst        : std_logic;
+	SIGNAL sdi_spread : std_logic;       
+	SIGNAL pn_sel     : std_logic_vector(1 DOWNTO 0); -- select PN code;   
+	SIGNAL bit_sample : std_logic;   
+	SIGNAL databit 	  : std_logic;
+	
+BEGIN
+
+uut: acctop_rx PORT MAP -- ports aan signalen verbinden met port mapping
+    (
+      	clk    => clk,
+      	clk_en => clk_en,
+      	rst    => rst,
+	sdi_spread   => sdi_spread,       
+	pn_sel   => pn_sel,     
+	bit_sample => bit_sample,
+	databit => databit
+    );
+
+clock : PROCESS -- kloksignaal voor de synchrone elementen
+	BEGIN
+    	clk <= '0';
+    	WAIT FOR period/2;
+    	LOOP
+			clk <= '0';
+			WAIT FOR period/2;
+			clk <= '1';
+			WAIT FOR period/2;
+			EXIT WHEN end_of_sim;
+		END LOOP;
+	WAIT;
+  END PROCESS clock;
+  
+tb : PROCESS -- testbench
+
+	PROCEDURE tbvector(CONSTANT stimvect : IN std_logic_vector(3 DOWNTO 0))IS -- test vector aanmaken
+		BEGIN
+			sdi_spread <= stimvect(3);
+			pn_sel(1) <= stimvect(2);    -- inputs "linken" met de vector
+			pn_sel(0) <= stimvect(1); 
+			rst <= stimvect(0);
+      
+			WAIT FOR period;
+	END tbvector;
+	BEGIN	-- verschillende mogelijke scenario's aflopen
+		clk_en <= '1';
+
+		tbvector("0001"); -- reset voor initialisatie
+		WAIT FOR period*5;
+		tbvector("0010");
+		WAIT FOR period*15;
+		tbvector("1010");
+		WAIT FOR period*15;
+		tbvector("0010");
+		WAIT FOR period*63;
+		tbvector("1010");
+		WAIT FOR period*15;
+		tbvector("0010");
+		WAIT FOR period*15;
+		tbvector("1010");
+		WAIT FOR period*15;
+		tbvector("0010");
+		WAIT FOR period*15;
+		tbvector("1010");
+		WAIT FOR period*47;
+		tbvector("0010");
+		WAIT FOR period*15;
+		tbvector("1010");
+		WAIT FOR period*31;
+		tbvector("0010");
+		WAIT FOR period*47;
+		tbvector("1010");
+		WAIT FOR period*79;
+		tbvector("0010");
+		WAIT FOR period*31;
+		tbvector("1010");
+		WAIT FOR period*31;
+		tbvector("0010");
+		WAIT FOR period*15;
+		tbvector("1010");
+		WAIT FOR period*15;
+		tbvector("0010");
+		WAIT FOR period*50;
+
+		end_of_sim <= true;
+		WAIT;
+
+	END PROCESS;
+END;

@@ -1,0 +1,6 @@
+CommandLine
+C:\Xilinx\10.1\ISE\bin\nt\unwrapped\xst.exe -ise E:/Pieter-Jan Steeman/Project/Xilinx/Zender/Zender.ise -intstyle ise -ifn E:/Pieter-Jan Steeman/Project/Xilinx/Zender/transmitterTop.xst -ofn E:/Pieter-Jan Steeman/Project/Xilinx/Zender/transmitterTop.syr -finalclean 1
+s
+FormatString
+xst [-ifn <InputFile>] [-ofn <OutputFile>] [-ise <iseProjectFile>] [--quiet] [-intstyle <Style>] [--deb <DebugLevel>] [--finalclean <Clean>] [--PcubeFlow] [--globOptFlow] [--XstNtrc]
+s

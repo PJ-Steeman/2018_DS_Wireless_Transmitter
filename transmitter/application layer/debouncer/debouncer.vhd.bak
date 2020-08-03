@@ -1,0 +1,46 @@
+-- Pieter-Jan Steeman
+
+LIBRARY ieee;
+USE ieee.std_logic_1164.ALL;
+USE ieee.std_logic_unsigned.ALL;
+
+ENTITY debouncer IS
+	PORT
+	  (
+		clk    : IN std_logic;  -- input
+		clk_en : IN std_logic;
+		rst    : IN std_logic;  -- input
+		cha    : IN std_logic;  -- input
+		syncha : OUT std_logic  -- output
+	  );
+END debouncer;
+
+ARCHITECTURE behavior OF debouncer IS
+	SIGNAL sh_ldb     : std_logic := '0';                                 -- shift of load(actief laag)
+	SIGNAL pres_shift : std_logic_vector(3 DOWNTO 0) := (OTHERS => '0');  -- 4 bit lang schuifregister
+	SIGNAL next_shift : std_logic_vector(3 DOWNTO 0) := (OTHERS => '0');  -- het "volgende" schuifregister
+BEGIN
+  
+sh_ldb <= cha XOR pres_shift(0);  -- selectie load of shift afh van uitgang shiftreg en cha
+syncha <= pres_shift(0);          -- laatste registerplaats naar uitgang
+
+syn_debouncer : PROCESS(clk)           			-- synchroon deel debouncer
+BEGIN
+	IF (rising_edge(clk) AND clk_en = '1') THEN
+		IF rst = '1' THEN                  	-- als reset hoog is -> zet schuifregister op "0000"
+			pres_shift <= (OTHERS => '0');
+		ELSE
+			pres_shift <= next_shift;       -- plaats nieuwe registerwaarden in het register
+		END IF;
+	END IF;
+END PROCESS syn_debouncer;
+
+com_debouncer : PROCESS(cha,pres_shift,sh_ldb)   	    -- combinatorisch deel debouncer
+BEGIN
+	IF sh_ldb = '1' THEN                          	    -- als sh_ldb op shift staat
+		next_shift <= cha & pres_shift(3 DOWNTO 1); -- schuif huidig register 1 plaats op en voeg cha toe op het einde
+	ELSE                                          	    -- als sh_ldb op load staat
+		next_shift <= (OTHERS => pres_shift(0));    -- zowel de next als de present schuifregisters worden op 0 gezet
+	END IF;
+END PROCESS com_debouncer;
+END behavior;

@@ -1,0 +1,27 @@
+# Compile of debouncer.vhd was successful.
+# Compile of debouncer_test.vhd was successful.
+# Compile of edgedetector.vhd was successful.
+# Compile of edgedetector_test.vhd was successful.
+# Compile of segdec.vhd was successful.
+# Compile of segdec_test.vhd was successful.
+# Compile of udcounter.vhd was successful.
+# Compile of udcounter_test.vhd was successful.
+# Compile of ApplicationTop.vhd was successful.
+# Compile of ApplicationTop_test.vhd was successful.
+# Compile of pngen.vhd was successful.
+# Compile of pngen_test.vhd was successful.
+# Compile of mux.vhd was successful.
+# Compile of mux_test.vhd was successful.
+# Compile of AccessTop.vhd was successful.
+# Compile of AccessTop_test.vhd was successful.
+# Compile of seqcont.vhd was successful.
+# Compile of seqcont_test.vhd was successful.
+# Compile of datareg.vhd was successful.
+# Compile of datareg_test.vhd was successful.
+# Compile of DataTop.vhd was successful.
+# Compile of DataTop_test.vhd was successful.
+# Compile of TransmitterTop.vhd was successful.
+# Compile of TransmitterTop_test.vhd was successful.
+# Compile of clkDivTx.vhd was successful.
+# Compile of clkDivTx_test.vhd was successful.
+# 26 compiles, 0 failed with no errors. 

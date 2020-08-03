@@ -1,0 +1,59 @@
+-- Pieter-Jan Steeman
+
+LIBRARY ieee;
+USE ieee.std_logic_1164.ALL;
+USE ieee.std_logic_unsigned.ALL;
+
+ENTITY udcounter IS
+	PORT
+	(
+		clk     	: IN std_logic;							-- clock signaal
+		clk_en  	: IN std_logic;							-- clock enable om clock frequentie te verlagen
+		rst     	: IN std_logic;							-- reset
+		pn_start : IN std_logic;							
+		load 	   : OUT std_logic;						
+		shift    : OUT std_logic		-- output
+	);
+END udcounter;
+
+ARCHITECTURE behavior OF udcounter IS
+		 SIGNAL next_count : std_logic_vector(3 DOWNTO 0);
+	   SIGNAL pres_count : std_logic_vector(3 DOWNTO 0);
+	   SIGNAL load_next : std_logic;
+	   SIGNAL shoft_next : std_logic;
+BEGIN
+BEGIN
+-- 2-Process: synchronous part
+count_sync : PROCESS (clk)
+BEGIN
+	IF (rising_edge(clk) AND clk_en = '1') THEN
+		IF (rst = '1') THEN -- rst line high, go to initial state
+			p_count <= "1010";
+			ld <= '0';
+      			sh <= '0';
+		ELSE -- normal operation
+			p_count <= n_count;
+			ld <= ld_next;
+			sh <= sh_next;
+		END IF;
+	END IF;
+END PROCESS count_sync;
+-- 2-Process: combinatoric part
+-- 1 LOAD + 10 SHIFTS = counter from 0 to 10
+count_comb : PROCESS (p_count, pn_start)
+BEGIN
+	IF p_count = "1010" AND pn_start = '1' THEN -- When 10, reset (priority)
+		n_count <= "0000";
+		ld_next <= '1';
+    		sh_next <= '0';
+	ELSIF pn_start = '1' THEN -- count up when PN_start is received
+		n_count <= p_count + 1;
+		ld_next <= '0';
+    		sh_next <= '1';
+	ELSE -- halt
+		ld_next <= '0';
+    		sh_next <= '0';
+		n_count <= p_count; 
+	END IF;
+END PROCESS count_comb;
+END behavior;

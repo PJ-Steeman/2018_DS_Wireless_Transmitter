@@ -1,0 +1,85 @@
+-- Pieter-Jan Steeman
+
+LIBRARY ieee;
+USE ieee.std_logic_1164.ALL;
+USE ieee.std_logic_unsigned.ALL;
+
+ENTITY acctop is
+  PORT 
+  (
+    clk     	 : IN std_logic;							-- clock signaal
+		clk_en  	 : IN std_logic;							-- clock enable om clock frequentie te verlagen
+		rst     	 : IN std_logic;							-- reset
+		dip1      : IN std_logic;       
+		dip2      : IN std_logic;      
+		sdo_posenc: IN std_logic;
+		pn_start  : OUT std_logic; 
+    sdo_spread: OUT std_logic
+  );
+END acctop;
+
+ARCHITECTURE behavior OF acctop IS
+    
+    -- aanmaken van componenten om later op te roepen
+    
+COMPONENT mux
+  PORT
+	(
+		in0 : IN std_logic;
+		in1 : IN std_logic;
+		in2 : IN std_logic;
+		in3  	: IN std_logic;
+		sel		               	: IN std_logic_vector(1 DOWNTO 0);
+		sdo_spread           : OUT std_logic
+	);
+END COMPONENT;
+
+COMPONENT pngen
+  PORT
+	(
+		clk     	: IN std_logic;							-- clock signaal
+		clk_en  	: IN std_logic;							-- clock enable om clock frequentie te verlagen
+		rst			   : IN std_logic;							-- reset om terug naar initiele situatie te gaan		
+		pn_ml1   : OUT std_logic;						-- pn code 1
+		pn_ml2  	: OUT std_logic;						-- pn code 2
+		pn_gold  : OUT std_logic;   		 -- ml1 XOR ml2
+		pn_start : OUT std_logic      	-- registers staan terug op start
+	);
+END COMPONENT;
+
+SIGNAL int_pn_ml1, int_pn_ml2, int_pn_gold, int_pn_start : std_logic; 
+SIGNAL int_sdo_spread, xor1, xor2, xor3 : std_logic;
+
+BEGIN
+    -- de benodigde componenten oproepen en vai port mapping de juiste signalen eraan verbinden
+    
+sdo_spread <= int_sdo_spread; 
+pn_start <= int_pn_start;
+
+xor1 <= int_pn_ml1 XOR  int_sdo_posenc;
+xor2 <= int_pn_ml2 XOR  int_sdo_posenc;
+xor3 <= int_pn_gold XOR  int_sdo_posenc;
+
+int_pngen : pngen
+PORT MAP(
+    clk => clk,
+		clk_en => clk_en,
+		rst => rst,
+    pn_ml1  => int_pn_ml1,
+		pn_ml2  => int_pn_ml2,
+		pn_gold  => int_pn_gold,
+		pn_start  => int_pn_start
+);
+
+int_mux : mux
+PORT MAP(
+    in0 => sdo_posenc,
+    in1 => xor1,
+    in2 => xor2,
+    in3 => xor3,
+		sel(0) =>   dip1,
+		sel(1) =>   dip2,         	
+		sdo_spread  =>  int_sdo_spread      
+);  
+
+END behavior;

@@ -1,0 +1,33 @@
+xst -ise "E:/Pieter-Jan Steeman/Project/Xilinx/Zender/Zender.ise" -intstyle ise -ifn "E:/Pieter-Jan Steeman/Project/Xilinx/Zender/transmitterTop.xst" -ofn "E:/Pieter-Jan Steeman/Project/Xilinx/Zender/transmitterTop.syr"
+ngdbuild -ise "E:/Pieter-Jan Steeman/Project/Xilinx/Zender/Zender.ise" -intstyle ise -dd _ngo  -nt timestamp -i -p xc2vp30-ff896-7 "transmitterTop.ngc" transmitterTop.ngd
+ngdbuild -ise "E:/Pieter-Jan Steeman/Project/Xilinx/Zender/Zender.ise" -intstyle ise -dd _ngo  -nt timestamp -i -p xc2vp30-ff896-7 "transmitterTop.ngc" transmitterTop.ngd
+xst -ise "E:/Pieter-Jan Steeman/Project/Xilinx/Zender/Zender.ise" -intstyle ise -ifn "E:/Pieter-Jan Steeman/Project/Xilinx/Zender/transmitterTop.xst" -ofn "E:/Pieter-Jan Steeman/Project/Xilinx/Zender/transmitterTop.syr"
+xst -ise "E:/Pieter-Jan Steeman/Project/Xilinx/Zender/Zender.ise" -intstyle ise -ifn "E:/Pieter-Jan Steeman/Project/Xilinx/Zender/transmitterTop.xst" -ofn "E:/Pieter-Jan Steeman/Project/Xilinx/Zender/transmitterTop.syr"
+ngdbuild -ise "E:/Pieter-Jan Steeman/Project/Xilinx/Zender/Zender.ise" -intstyle ise -dd _ngo  -nt timestamp -i -p xc2vp30-ff896-7 "transmitterTop.ngc" transmitterTop.ngd
+ngdbuild -ise "E:/Pieter-Jan Steeman/Project/Xilinx/Zender/Zender.ise" -intstyle ise -dd _ngo  -nt timestamp -i -p xc2vp30-ff896-7 "transmitterTop.ngc" transmitterTop.ngd
+map -ise "E:/Pieter-Jan Steeman/Project/Xilinx/Zender/Zender.ise" -intstyle ise -p xc2vp30-ff896-7 -cm area -pr off -k 4 -c 100 -tx off -o transmitterTop_map.ncd transmitterTop.ngd transmitterTop.pcf
+par -ise "E:/Pieter-Jan Steeman/Project/Xilinx/Zender/Zender.ise" -w -intstyle ise -ol std -t 1 transmitterTop_map.ncd transmitterTop.ncd transmitterTop.pcf
+trce -ise "E:/Pieter-Jan Steeman/Project/Xilinx/Zender/Zender.ise" -intstyle ise -e 3 -s 7 -xml transmitterTop transmitterTop.ncd -o transmitterTop.twr transmitterTop.pcf -ucf zender.ucf
+bitgen -ise "E:/Pieter-Jan Steeman/Project/Xilinx/Zender/Zender.ise" -intstyle ise -f transmitterTop.ut transmitterTop.ncd
+ngdbuild -ise "E:/Pieter-Jan Steeman/Project/Xilinx/Zender/Zender.ise" -intstyle ise -dd _ngo  -nt timestamp -i -p xc2vp30-ff896-7 "transmitterTop.ngc" transmitterTop.ngd
+map -ise "E:/Pieter-Jan Steeman/Project/Xilinx/Zender/Zender.ise" -intstyle ise -p xc2vp30-ff896-7 -cm area -pr off -k 4 -c 100 -tx off -o transmitterTop_map.ncd transmitterTop.ngd transmitterTop.pcf
+par -ise "E:/Pieter-Jan Steeman/Project/Xilinx/Zender/Zender.ise" -w -intstyle ise -ol std -t 1 transmitterTop_map.ncd transmitterTop.ncd transmitterTop.pcf
+trce -ise "E:/Pieter-Jan Steeman/Project/Xilinx/Zender/Zender.ise" -intstyle ise -e 3 -s 7 -xml transmitterTop transmitterTop.ncd -o transmitterTop.twr transmitterTop.pcf -ucf zender.ucf
+bitgen -ise "E:/Pieter-Jan Steeman/Project/Xilinx/Zender/Zender.ise" -intstyle ise -f transmitterTop.ut transmitterTop.ncd
+ngdbuild -ise "E:/Pieter-Jan Steeman/Project/Xilinx/Zender/Zender.ise" -intstyle ise -dd _ngo  -nt timestamp -i -p xc2vp30-ff896-7 "transmitterTop.ngc" transmitterTop.ngd
+map -ise "E:/Pieter-Jan Steeman/Project/Xilinx/Zender/Zender.ise" -intstyle ise -p xc2vp30-ff896-7 -cm area -pr off -k 4 -c 100 -tx off -o transmitterTop_map.ncd transmitterTop.ngd transmitterTop.pcf
+par -ise "E:/Pieter-Jan Steeman/Project/Xilinx/Zender/Zender.ise" -w -intstyle ise -ol std -t 1 transmitterTop_map.ncd transmitterTop.ncd transmitterTop.pcf
+trce -ise "E:/Pieter-Jan Steeman/Project/Xilinx/Zender/Zender.ise" -intstyle ise -e 3 -s 7 -xml transmitterTop transmitterTop.ncd -o transmitterTop.twr transmitterTop.pcf -ucf zender.ucf
+ngdbuild -ise "E:/Pieter-Jan Steeman/Project/Xilinx/Zender/Zender.ise" -intstyle ise -dd _ngo  -nt timestamp -i -p xc2vp30-ff896-7 "transmitterTop.ngc" transmitterTop.ngd
+map -ise "E:/Pieter-Jan Steeman/Project/Xilinx/Zender/Zender.ise" -intstyle ise -p xc2vp30-ff896-7 -cm area -pr off -k 4 -c 100 -tx off -o transmitterTop_map.ncd transmitterTop.ngd transmitterTop.pcf
+par -ise "E:/Pieter-Jan Steeman/Project/Xilinx/Zender/Zender.ise" -w -intstyle ise -ol std -t 1 transmitterTop_map.ncd transmitterTop.ncd transmitterTop.pcf
+trce -ise "E:/Pieter-Jan Steeman/Project/Xilinx/Zender/Zender.ise" -intstyle ise -e 3 -s 7 -xml transmitterTop transmitterTop.ncd -o transmitterTop.twr transmitterTop.pcf -ucf zender.ucf
+bitgen -ise "E:/Pieter-Jan Steeman/Project/Xilinx/Zender/Zender.ise" -intstyle ise -f transmitterTop.ut transmitterTop.ncd
+xst -ise "E:/Pieter-Jan Steeman/Project/Xilinx/Zender/Zender.ise" -intstyle ise -ifn "E:/Pieter-Jan Steeman/Project/Xilinx/Zender/transmitterTop.xst" -ofn "E:/Pieter-Jan Steeman/Project/Xilinx/Zender/transmitterTop.syr"
+xst -ise "E:/Pieter-Jan Steeman/Project/Xilinx/Zender/Zender.ise" -intstyle ise -ifn "E:/Pieter-Jan Steeman/Project/Xilinx/Zender/transmitterTop.xst" -ofn "E:/Pieter-Jan Steeman/Project/Xilinx/Zender/transmitterTop.syr"
+xst -ise "E:/Pieter-Jan Steeman/Project/Xilinx/Zender/Zender.ise" -intstyle ise -ifn "E:/Pieter-Jan Steeman/Project/Xilinx/Zender/transmitterTop.xst" -ofn "E:/Pieter-Jan Steeman/Project/Xilinx/Zender/transmitterTop.syr"
+ngdbuild -ise "E:/Pieter-Jan Steeman/Project/Xilinx/Zender/Zender.ise" -intstyle ise -dd _ngo  -nt timestamp -i -p xc2vp30-ff896-7 "transmitterTop.ngc" transmitterTop.ngd
+map -ise "E:/Pieter-Jan Steeman/Project/Xilinx/Zender/Zender.ise" -intstyle ise -p xc2vp30-ff896-7 -cm area -pr off -k 4 -c 100 -tx off -o transmitterTop_map.ncd transmitterTop.ngd transmitterTop.pcf
+par -ise "E:/Pieter-Jan Steeman/Project/Xilinx/Zender/Zender.ise" -w -intstyle ise -ol std -t 1 transmitterTop_map.ncd transmitterTop.ncd transmitterTop.pcf
+trce -ise "E:/Pieter-Jan Steeman/Project/Xilinx/Zender/Zender.ise" -intstyle ise -e 3 -s 7 -xml transmitterTop transmitterTop.ncd -o transmitterTop.twr transmitterTop.pcf -ucf zender.ucf
+bitgen -ise "E:/Pieter-Jan Steeman/Project/Xilinx/Zender/Zender.ise" -intstyle ise -f transmitterTop.ut transmitterTop.ncd

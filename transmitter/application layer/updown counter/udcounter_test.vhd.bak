@@ -1,0 +1,88 @@
+-- Pieter-Jan Steeman
+
+LIBRARY ieee;
+USE ieee.std_logic_1164.ALL;
+USE ieee.std_logic_unsigned.ALL;
+
+ENTITY udcounter_test IS
+END udcounter_test;
+
+ARCHITECTURE structural OF udcounter_test IS
+
+COMPONENT udcounter 
+	PORT
+	(
+		clk     	: IN std_logic;							-- clock signaal
+		clk_en  	: IN std_logic;							-- clock enable om clock frequentie te verlagen
+		rst     	: IN std_logic;							-- reset
+		plus		   : IN std_logic;							-- om teller te doen optellen
+		min	    	: IN std_logic;							-- om teller te doen aftellen
+		uitgang  : OUT std_logic_vector(3 DOWNTO 0)		-- output
+	);
+END COMPONENT;
+
+FOR uut : udcounter USE ENTITY work.udcounter(behavior); -- ports aan signalen verbinden
+
+	CONSTANT PERIOD   : TIME := 100 ns;
+	CONSTANT DELAY    : TIME := 10 ns;
+	SIGNAL end_of_sim : BOOLEAN := false;
+	
+	SIGNAL clk        : std_logic;
+	SIGNAL clk_en     : std_logic;
+	SIGNAL rst        : std_logic;
+	SIGNAL plus       : std_logic;
+	SIGNAL min        : std_logic;
+	SIGNAL uitgang    : std_logic_vector(3 DOWNTO 0);
+	
+BEGIN
+
+uut: udcounter PORT MAP
+	(
+		clk     => clk,
+		clk_en  => clk_en,
+		rst     => rst,
+		plus    => plus,
+		min     => min,
+		uitgang => uitgang
+	);
+	
+clock : PROCESS -- kloksignaal voor de synchrone elementen
+	BEGIN
+		clk <= '0';
+    	WAIT FOR period/2;
+    	LOOP
+			clk <= '0';
+			WAIT FOR period/2;
+			clk <= '1';
+			WAIT FOR period/2;
+			EXIT WHEN end_of_sim;
+		END LOOP;
+	WAIT;
+  END PROCESS clock;
+  
+tb : PROCESS -- testbench
+
+	PROCEDURE tbvector(CONSTANT stimvect : IN std_logic_vector(2 DOWNTO 0))IS -- vector aanmaken
+		BEGIN
+			min <= stimvect(2); 	-- inputs "linken" met de vector
+			plus <= stimvect(1); 
+			rst <= stimvect(0);
+      
+		WAIT FOR period;
+	END tbvector;
+	BEGIN	-- verschillende mogelijke scenario's aflopen
+
+		clk_en <= '1';
+
+		tbvector("001"); -- reset voor initialisatie
+		WAIT FOR period;
+		tbvector("010");
+		WAIT FOR period*30;
+		tbvector("100");
+      
+		end_of_sim <= true;
+		WAIT;
+		
+	END PROCESS;
+END;
+

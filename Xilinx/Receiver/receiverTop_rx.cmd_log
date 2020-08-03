@@ -1,0 +1,71 @@
+xst -ise "E:/Pieter-Jan Steeman/Project/Xilinx/Receiver/Receiver.ise" -intstyle ise -ifn "E:/Pieter-Jan Steeman/Project/Xilinx/Receiver/receiverTop_rx.xst" -ofn "E:/Pieter-Jan Steeman/Project/Xilinx/Receiver/receiverTop_rx.syr"
+ngdbuild -ise "E:/Pieter-Jan Steeman/Project/Xilinx/Receiver/Receiver.ise" -intstyle ise -dd _ngo  -nt timestamp -i -p xc2vp30-ff896-7 "receiverTop_rx.ngc" receiverTop_rx.ngd
+map -ise "E:/Pieter-Jan Steeman/Project/Xilinx/Receiver/Receiver.ise" -intstyle ise -p xc2vp30-ff896-7 -cm area -pr off -k 4 -c 100 -tx off -o receiverTop_rx_map.ncd receiverTop_rx.ngd receiverTop_rx.pcf
+par -ise "E:/Pieter-Jan Steeman/Project/Xilinx/Receiver/Receiver.ise" -w -intstyle ise -ol std -t 1 receiverTop_rx_map.ncd receiverTop_rx.ncd receiverTop_rx.pcf
+trce -ise "E:/Pieter-Jan Steeman/Project/Xilinx/Receiver/Receiver.ise" -intstyle ise -e 3 -s 7 -xml receiverTop_rx receiverTop_rx.ncd -o receiverTop_rx.twr receiverTop_rx.pcf -ucf receiver.ucf
+bitgen -ise "E:/Pieter-Jan Steeman/Project/Xilinx/Receiver/Receiver.ise" -intstyle ise -f receiverTop_rx.ut receiverTop_rx.ncd
+xst -ise "E:/Pieter-Jan Steeman/Project/Xilinx/Receiver/Receiver.ise" -intstyle ise -ifn "E:/Pieter-Jan Steeman/Project/Xilinx/Receiver/receiverTop_rx.xst" -ofn "E:/Pieter-Jan Steeman/Project/Xilinx/Receiver/receiverTop_rx.syr"
+xst -ise "E:/Pieter-Jan Steeman/Project/Xilinx/Receiver/Receiver.ise" -intstyle ise -ifn "E:/Pieter-Jan Steeman/Project/Xilinx/Receiver/receiverTop_rx.xst" -ofn "E:/Pieter-Jan Steeman/Project/Xilinx/Receiver/receiverTop_rx.syr"
+xst -ise "E:/Pieter-Jan Steeman/Project/Xilinx/Receiver/Receiver.ise" -intstyle ise -ifn "E:/Pieter-Jan Steeman/Project/Xilinx/Receiver/receiverTop_rx.xst" -ofn "E:/Pieter-Jan Steeman/Project/Xilinx/Receiver/receiverTop_rx.syr"
+xst -ise "E:/Pieter-Jan Steeman/Project/Xilinx/Receiver/Receiver.ise" -intstyle ise -ifn "E:/Pieter-Jan Steeman/Project/Xilinx/Receiver/receiverTop_rx.xst" -ofn "E:/Pieter-Jan Steeman/Project/Xilinx/Receiver/receiverTop_rx.syr"
+ngdbuild -ise "E:/Pieter-Jan Steeman/Project/Xilinx/Receiver/Receiver.ise" -intstyle ise -dd _ngo  -nt timestamp -i -p xc2vp30-ff896-7 "receiverTop_rx.ngc" receiverTop_rx.ngd
+map -ise "E:/Pieter-Jan Steeman/Project/Xilinx/Receiver/Receiver.ise" -intstyle ise -p xc2vp30-ff896-7 -cm area -pr off -k 4 -c 100 -tx off -o receiverTop_rx_map.ncd receiverTop_rx.ngd receiverTop_rx.pcf
+par -ise "E:/Pieter-Jan Steeman/Project/Xilinx/Receiver/Receiver.ise" -w -intstyle ise -ol std -t 1 receiverTop_rx_map.ncd receiverTop_rx.ncd receiverTop_rx.pcf
+trce -ise "E:/Pieter-Jan Steeman/Project/Xilinx/Receiver/Receiver.ise" -intstyle ise -e 3 -s 7 -xml receiverTop_rx receiverTop_rx.ncd -o receiverTop_rx.twr receiverTop_rx.pcf -ucf receiver.ucf
+bitgen -ise "E:/Pieter-Jan Steeman/Project/Xilinx/Receiver/Receiver.ise" -intstyle ise -f receiverTop_rx.ut receiverTop_rx.ncd
+xst -ise "E:/Pieter-Jan Steeman/Project/Xilinx/Receiver/Receiver.ise" -intstyle ise -ifn "E:/Pieter-Jan Steeman/Project/Xilinx/Receiver/receiverTop_rx.xst" -ofn "E:/Pieter-Jan Steeman/Project/Xilinx/Receiver/receiverTop_rx.syr"
+ngdbuild -ise "E:/Pieter-Jan Steeman/Project/Xilinx/Receiver/Receiver.ise" -intstyle ise -dd _ngo  -nt timestamp -i -p xc2vp30-ff896-7 "receiverTop_rx.ngc" receiverTop_rx.ngd
+map -ise "E:/Pieter-Jan Steeman/Project/Xilinx/Receiver/Receiver.ise" -intstyle ise -p xc2vp30-ff896-7 -cm area -pr off -k 4 -c 100 -tx off -o receiverTop_rx_map.ncd receiverTop_rx.ngd receiverTop_rx.pcf
+par -ise "E:/Pieter-Jan Steeman/Project/Xilinx/Receiver/Receiver.ise" -w -intstyle ise -ol std -t 1 receiverTop_rx_map.ncd receiverTop_rx.ncd receiverTop_rx.pcf
+trce -ise "E:/Pieter-Jan Steeman/Project/Xilinx/Receiver/Receiver.ise" -intstyle ise -e 3 -s 7 -xml receiverTop_rx receiverTop_rx.ncd -o receiverTop_rx.twr receiverTop_rx.pcf -ucf receiver.ucf
+bitgen -ise "E:/Pieter-Jan Steeman/Project/Xilinx/Receiver/Receiver.ise" -intstyle ise -f receiverTop_rx.ut receiverTop_rx.ncd
+xst -ise "E:/Pieter-Jan Steeman/Project/Xilinx/Receiver/Receiver.ise" -intstyle ise -ifn "E:/Pieter-Jan Steeman/Project/Xilinx/Receiver/receiverTop_rx.xst" -ofn "E:/Pieter-Jan Steeman/Project/Xilinx/Receiver/receiverTop_rx.syr"
+xst -ise "E:/Pieter-Jan Steeman/Project/Xilinx/Receiver/Receiver.ise" -intstyle ise -ifn "E:/Pieter-Jan Steeman/Project/Xilinx/Receiver/receiverTop_rx.xst" -ofn "E:/Pieter-Jan Steeman/Project/Xilinx/Receiver/receiverTop_rx.syr"
+ngdbuild -ise "E:/Pieter-Jan Steeman/Project/Xilinx/Receiver/Receiver.ise" -intstyle ise -dd _ngo  -nt timestamp -i -p xc2vp30-ff896-7 "receiverTop_rx.ngc" receiverTop_rx.ngd
+map -ise "E:/Pieter-Jan Steeman/Project/Xilinx/Receiver/Receiver.ise" -intstyle ise -p xc2vp30-ff896-7 -cm area -pr off -k 4 -c 100 -tx off -o receiverTop_rx_map.ncd receiverTop_rx.ngd receiverTop_rx.pcf
+par -ise "E:/Pieter-Jan Steeman/Project/Xilinx/Receiver/Receiver.ise" -w -intstyle ise -ol std -t 1 receiverTop_rx_map.ncd receiverTop_rx.ncd receiverTop_rx.pcf
+trce -ise "E:/Pieter-Jan Steeman/Project/Xilinx/Receiver/Receiver.ise" -intstyle ise -e 3 -s 7 -xml receiverTop_rx receiverTop_rx.ncd -o receiverTop_rx.twr receiverTop_rx.pcf -ucf receiver.ucf
+bitgen -ise "E:/Pieter-Jan Steeman/Project/Xilinx/Receiver/Receiver.ise" -intstyle ise -f receiverTop_rx.ut receiverTop_rx.ncd
+xst -ise "E:/Pieter-Jan Steeman/Project/Xilinx/Receiver/Receiver.ise" -intstyle ise -ifn "E:/Pieter-Jan Steeman/Project/Xilinx/Receiver/receiverTop_rx.xst" -ofn "E:/Pieter-Jan Steeman/Project/Xilinx/Receiver/receiverTop_rx.syr"
+ngdbuild -ise "E:/Pieter-Jan Steeman/Project/Xilinx/Receiver/Receiver.ise" -intstyle ise -dd _ngo  -nt timestamp -i -p xc2vp30-ff896-7 "receiverTop_rx.ngc" receiverTop_rx.ngd
+map -ise "E:/Pieter-Jan Steeman/Project/Xilinx/Receiver/Receiver.ise" -intstyle ise -p xc2vp30-ff896-7 -cm area -pr off -k 4 -c 100 -tx off -o receiverTop_rx_map.ncd receiverTop_rx.ngd receiverTop_rx.pcf
+par -ise "E:/Pieter-Jan Steeman/Project/Xilinx/Receiver/Receiver.ise" -w -intstyle ise -ol std -t 1 receiverTop_rx_map.ncd receiverTop_rx.ncd receiverTop_rx.pcf
+trce -ise "E:/Pieter-Jan Steeman/Project/Xilinx/Receiver/Receiver.ise" -intstyle ise -e 3 -s 7 -xml receiverTop_rx receiverTop_rx.ncd -o receiverTop_rx.twr receiverTop_rx.pcf -ucf receiver.ucf
+bitgen -ise "E:/Pieter-Jan Steeman/Project/Xilinx/Receiver/Receiver.ise" -intstyle ise -f receiverTop_rx.ut receiverTop_rx.ncd
+xst -ise "E:/Pieter-Jan Steeman/Project/Xilinx/Receiver/Receiver.ise" -intstyle ise -ifn "E:/Pieter-Jan Steeman/Project/Xilinx/Receiver/receiverTop_rx.xst" -ofn "E:/Pieter-Jan Steeman/Project/Xilinx/Receiver/receiverTop_rx.syr"
+xst -ise "E:/Pieter-Jan Steeman/Project/Xilinx/Receiver/Receiver.ise" -intstyle ise -ifn "E:/Pieter-Jan Steeman/Project/Xilinx/Receiver/receiverTop_rx.xst" -ofn "E:/Pieter-Jan Steeman/Project/Xilinx/Receiver/receiverTop_rx.syr"
+xst -ise "E:/Pieter-Jan Steeman/Project/Xilinx/Receiver/Receiver.ise" -intstyle ise -ifn "E:/Pieter-Jan Steeman/Project/Xilinx/Receiver/receiverTop_rx.xst" -ofn "E:/Pieter-Jan Steeman/Project/Xilinx/Receiver/receiverTop_rx.syr"
+ngdbuild -ise "E:/Pieter-Jan Steeman/Project/Xilinx/Receiver/Receiver.ise" -intstyle ise -dd _ngo  -nt timestamp -i -p xc2vp30-ff896-7 "receiverTop_rx.ngc" receiverTop_rx.ngd
+map -ise "E:/Pieter-Jan Steeman/Project/Xilinx/Receiver/Receiver.ise" -intstyle ise -p xc2vp30-ff896-7 -cm area -pr off -k 4 -c 100 -tx off -o receiverTop_rx_map.ncd receiverTop_rx.ngd receiverTop_rx.pcf
+par -ise "E:/Pieter-Jan Steeman/Project/Xilinx/Receiver/Receiver.ise" -w -intstyle ise -ol std -t 1 receiverTop_rx_map.ncd receiverTop_rx.ncd receiverTop_rx.pcf
+trce -ise "E:/Pieter-Jan Steeman/Project/Xilinx/Receiver/Receiver.ise" -intstyle ise -e 3 -s 7 -xml receiverTop_rx receiverTop_rx.ncd -o receiverTop_rx.twr receiverTop_rx.pcf -ucf receiver.ucf
+bitgen -ise "E:/Pieter-Jan Steeman/Project/Xilinx/Receiver/Receiver.ise" -intstyle ise -f receiverTop_rx.ut receiverTop_rx.ncd
+xst -ise "E:/Pieter-Jan Steeman/Project/Xilinx/Receiver/Receiver.ise" -intstyle ise -ifn "E:/Pieter-Jan Steeman/Project/Xilinx/Receiver/receiverTop_rx.xst" -ofn "E:/Pieter-Jan Steeman/Project/Xilinx/Receiver/receiverTop_rx.syr"
+ngdbuild -ise "E:/Pieter-Jan Steeman/Project/Xilinx/Receiver/Receiver.ise" -intstyle ise -dd _ngo  -nt timestamp -i -p xc2vp30-ff896-7 "receiverTop_rx.ngc" receiverTop_rx.ngd
+map -ise "E:/Pieter-Jan Steeman/Project/Xilinx/Receiver/Receiver.ise" -intstyle ise -p xc2vp30-ff896-7 -cm area -pr off -k 4 -c 100 -tx off -o receiverTop_rx_map.ncd receiverTop_rx.ngd receiverTop_rx.pcf
+par -ise "E:/Pieter-Jan Steeman/Project/Xilinx/Receiver/Receiver.ise" -w -intstyle ise -ol std -t 1 receiverTop_rx_map.ncd receiverTop_rx.ncd receiverTop_rx.pcf
+trce -ise "E:/Pieter-Jan Steeman/Project/Xilinx/Receiver/Receiver.ise" -intstyle ise -e 3 -s 7 -xml receiverTop_rx receiverTop_rx.ncd -o receiverTop_rx.twr receiverTop_rx.pcf -ucf receiver.ucf
+bitgen -ise "E:/Pieter-Jan Steeman/Project/Xilinx/Receiver/Receiver.ise" -intstyle ise -f receiverTop_rx.ut receiverTop_rx.ncd
+xst -ise "E:/Pieter-Jan Steeman/Project/Xilinx/Receiver/Receiver.ise" -intstyle ise -ifn "E:/Pieter-Jan Steeman/Project/Xilinx/Receiver/receiverTop_rx.xst" -ofn "E:/Pieter-Jan Steeman/Project/Xilinx/Receiver/receiverTop_rx.syr"
+ngdbuild -ise "E:/Pieter-Jan Steeman/Project/Xilinx/Receiver/Receiver.ise" -intstyle ise -dd _ngo  -nt timestamp -i -p xc2vp30-ff896-7 "receiverTop_rx.ngc" receiverTop_rx.ngd
+map -ise "E:/Pieter-Jan Steeman/Project/Xilinx/Receiver/Receiver.ise" -intstyle ise -p xc2vp30-ff896-7 -cm area -pr off -k 4 -c 100 -tx off -o receiverTop_rx_map.ncd receiverTop_rx.ngd receiverTop_rx.pcf
+par -ise "E:/Pieter-Jan Steeman/Project/Xilinx/Receiver/Receiver.ise" -w -intstyle ise -ol std -t 1 receiverTop_rx_map.ncd receiverTop_rx.ncd receiverTop_rx.pcf
+trce -ise "E:/Pieter-Jan Steeman/Project/Xilinx/Receiver/Receiver.ise" -intstyle ise -e 3 -s 7 -xml receiverTop_rx receiverTop_rx.ncd -o receiverTop_rx.twr receiverTop_rx.pcf -ucf receiver.ucf
+bitgen -ise "E:/Pieter-Jan Steeman/Project/Xilinx/Receiver/Receiver.ise" -intstyle ise -f receiverTop_rx.ut receiverTop_rx.ncd
+xst -ise "E:/Pieter-Jan Steeman/Project/Xilinx/Receiver/Receiver.ise" -intstyle ise -ifn "E:/Pieter-Jan Steeman/Project/Xilinx/Receiver/receiverTop_rx.xst" -ofn "E:/Pieter-Jan Steeman/Project/Xilinx/Receiver/receiverTop_rx.syr"
+ngdbuild -ise "E:/Pieter-Jan Steeman/Project/Xilinx/Receiver/Receiver.ise" -intstyle ise -dd _ngo  -nt timestamp -i -p xc2vp30-ff896-7 "receiverTop_rx.ngc" receiverTop_rx.ngd
+map -ise "E:/Pieter-Jan Steeman/Project/Xilinx/Receiver/Receiver.ise" -intstyle ise -p xc2vp30-ff896-7 -cm area -pr off -k 4 -c 100 -tx off -o receiverTop_rx_map.ncd receiverTop_rx.ngd receiverTop_rx.pcf
+par -ise "E:/Pieter-Jan Steeman/Project/Xilinx/Receiver/Receiver.ise" -w -intstyle ise -ol std -t 1 receiverTop_rx_map.ncd receiverTop_rx.ncd receiverTop_rx.pcf
+trce -ise "E:/Pieter-Jan Steeman/Project/Xilinx/Receiver/Receiver.ise" -intstyle ise -e 3 -s 7 -xml receiverTop_rx receiverTop_rx.ncd -o receiverTop_rx.twr receiverTop_rx.pcf -ucf receiver.ucf
+bitgen -ise "E:/Pieter-Jan Steeman/Project/Xilinx/Receiver/Receiver.ise" -intstyle ise -f receiverTop_rx.ut receiverTop_rx.ncd
+xst -ise "E:/Pieter-Jan Steeman/Project/Xilinx/Receiver/Receiver.ise" -intstyle ise -ifn "E:/Pieter-Jan Steeman/Project/Xilinx/Receiver/receiverTop_rx.xst" -ofn "E:/Pieter-Jan Steeman/Project/Xilinx/Receiver/receiverTop_rx.syr"
+xst -ise "E:/Pieter-Jan Steeman/Project/Xilinx/Receiver/Receiver.ise" -intstyle ise -ifn "E:/Pieter-Jan Steeman/Project/Xilinx/Receiver/receiverTop_rx.xst" -ofn "E:/Pieter-Jan Steeman/Project/Xilinx/Receiver/receiverTop_rx.syr"
+xst -ise "E:/Pieter-Jan Steeman/Project/Xilinx/Receiver/Receiver.ise" -intstyle ise -ifn "E:/Pieter-Jan Steeman/Project/Xilinx/Receiver/receiverTop_rx.xst" -ofn "E:/Pieter-Jan Steeman/Project/Xilinx/Receiver/receiverTop_rx.syr"
+xst -ise "E:/Pieter-Jan Steeman/Project/Xilinx/Receiver/Receiver.ise" -intstyle ise -ifn "E:/Pieter-Jan Steeman/Project/Xilinx/Receiver/receiverTop_rx.xst" -ofn "E:/Pieter-Jan Steeman/Project/Xilinx/Receiver/receiverTop_rx.syr"
+xst -ise "E:/Pieter-Jan Steeman/Project/Xilinx/Receiver/Receiver.ise" -intstyle ise -ifn "E:/Pieter-Jan Steeman/Project/Xilinx/Receiver/receiverTop_rx.xst" -ofn "E:/Pieter-Jan Steeman/Project/Xilinx/Receiver/receiverTop_rx.syr"
+xst -ise "E:/Pieter-Jan Steeman/Project/Xilinx/Receiver/Receiver.ise" -intstyle ise -ifn "E:/Pieter-Jan Steeman/Project/Xilinx/Receiver/receiverTop_rx.xst" -ofn "E:/Pieter-Jan Steeman/Project/Xilinx/Receiver/receiverTop_rx.syr"
+ngdbuild -ise "E:/Pieter-Jan Steeman/Project/Xilinx/Receiver/Receiver.ise" -intstyle ise -dd _ngo  -nt timestamp -i -p xc2vp30-ff896-7 "receiverTop_rx.ngc" receiverTop_rx.ngd
+map -ise "E:/Pieter-Jan Steeman/Project/Xilinx/Receiver/Receiver.ise" -intstyle ise -p xc2vp30-ff896-7 -cm area -pr off -k 4 -c 100 -tx off -o receiverTop_rx_map.ncd receiverTop_rx.ngd receiverTop_rx.pcf
+par -ise "E:/Pieter-Jan Steeman/Project/Xilinx/Receiver/Receiver.ise" -w -intstyle ise -ol std -t 1 receiverTop_rx_map.ncd receiverTop_rx.ncd receiverTop_rx.pcf
+trce -ise "E:/Pieter-Jan Steeman/Project/Xilinx/Receiver/Receiver.ise" -intstyle ise -e 3 -s 7 -xml receiverTop_rx receiverTop_rx.ncd -o receiverTop_rx.twr receiverTop_rx.pcf -ucf receiver.ucf
+bitgen -ise "E:/Pieter-Jan Steeman/Project/Xilinx/Receiver/Receiver.ise" -intstyle ise -f receiverTop_rx.ut receiverTop_rx.ncd

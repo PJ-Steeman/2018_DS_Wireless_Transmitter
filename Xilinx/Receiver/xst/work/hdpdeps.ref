@@ -1,0 +1,99 @@
+V3 55
+FL "E:/Pieter-Jan Steeman/Project/Xilinx/Receiver/AccessTop.vhd" 2018/12/03.16:44:46 K.31
+EN work/acctop_rx 1544787014 \
+      FL "E:/Pieter-Jan Steeman/Project/Xilinx/Receiver/AccessTop.vhd" \
+      PB ieee/std_logic_1164 1200023565 PB ieee/STD_LOGIC_UNSIGNED 1200023567
+AR work/acctop_rx/behavior 1544787015 \
+      FL "E:/Pieter-Jan Steeman/Project/Xilinx/Receiver/AccessTop.vhd" \
+      EN work/acctop_rx 1544787014 CP dpll_rx CP mfilter_rx CP mux_rx CP pngen_rx \
+      CP edgedetector_rx CP despreader_rx CP correlator_rx
+FL "E:/Pieter-Jan Steeman/Project/Xilinx/Receiver/ApplicationTop.vhd" 2018/12/14.12:29:47 K.31
+EN work/apptop_rx 1544787010 \
+      FL "E:/Pieter-Jan Steeman/Project/Xilinx/Receiver/ApplicationTop.vhd" \
+      PB ieee/std_logic_1164 1200023565
+AR work/apptop_rx/behavior 1544787011 \
+      FL "E:/Pieter-Jan Steeman/Project/Xilinx/Receiver/ApplicationTop.vhd" \
+      EN work/apptop_rx 1544787010 CP latch_rx CP segdec_rx
+FL "E:/Pieter-Jan Steeman/Project/Xilinx/Receiver/clkDivRx.vhd" 2018/12/14.11:52:10 K.31
+EN work/clkDiv_rx 1544787008 \
+      FL "E:/Pieter-Jan Steeman/Project/Xilinx/Receiver/clkDivRx.vhd" \
+      PB ieee/std_logic_1164 1200023565 PB ieee/STD_LOGIC_UNSIGNED 1200023567
+AR work/clkDiv_rx/behavior 1544787009 \
+      FL "E:/Pieter-Jan Steeman/Project/Xilinx/Receiver/clkDivRx.vhd" \
+      EN work/clkDiv_rx 1544787008
+FL "E:/Pieter-Jan Steeman/Project/Xilinx/Receiver/correlator.vhd" 2018/12/13.18:24:48 K.31
+EN work/correlator_rx 1544787002 \
+      FL "E:/Pieter-Jan Steeman/Project/Xilinx/Receiver/correlator.vhd" \
+      PB ieee/std_logic_1164 1200023565 PB ieee/STD_LOGIC_UNSIGNED 1200023567
+AR work/correlator_rx/behavior 1544787003 \
+      FL "E:/Pieter-Jan Steeman/Project/Xilinx/Receiver/correlator.vhd" \
+      EN work/correlator_rx 1544787002
+FL "E:/Pieter-Jan Steeman/Project/Xilinx/Receiver/despreader.vhd" 2018/12/03.16:37:20 K.31
+EN work/despreader_rx 1544787000 \
+      FL "E:/Pieter-Jan Steeman/Project/Xilinx/Receiver/despreader.vhd" \
+      PB ieee/std_logic_1164 1200023565 PB ieee/STD_LOGIC_UNSIGNED 1200023567
+AR work/despreader_rx/behavior 1544787001 \
+      FL "E:/Pieter-Jan Steeman/Project/Xilinx/Receiver/despreader.vhd" \
+      EN work/despreader_rx 1544787000
+FL "E:/Pieter-Jan Steeman/Project/Xilinx/Receiver/dpll.vhd" 2018/12/06.13:13:40 K.31
+EN work/dpll_rx 1544786990 \
+      FL "E:/Pieter-Jan Steeman/Project/Xilinx/Receiver/dpll.vhd" \
+      PB ieee/std_logic_1164 1200023565 PB ieee/STD_LOGIC_UNSIGNED 1200023567
+AR work/dpll_rx/behavior 1544786991 \
+      FL "E:/Pieter-Jan Steeman/Project/Xilinx/Receiver/dpll.vhd" EN work/dpll_rx 1544786990
+FL "E:/Pieter-Jan Steeman/Project/Xilinx/Receiver/edgedetector.vhd" 2018/11/30.11:02:44 K.31
+EN work/edgedetector_rx 1544786998 \
+      FL "E:/Pieter-Jan Steeman/Project/Xilinx/Receiver/edgedetector.vhd" \
+      PB ieee/std_logic_1164 1200023565 PB ieee/STD_LOGIC_UNSIGNED 1200023567
+AR work/edgedetector_rx/behavior 1544786999 \
+      FL "E:/Pieter-Jan Steeman/Project/Xilinx/Receiver/edgedetector.vhd" \
+      EN work/edgedetector_rx 1544786998
+FL "E:/Pieter-Jan Steeman/Project/Xilinx/Receiver/latch.vhd" 2018/12/14.12:29:05 K.31
+EN work/latch_rx 1544787004 \
+      FL "E:/Pieter-Jan Steeman/Project/Xilinx/Receiver/latch.vhd" \
+      PB ieee/std_logic_1164 1200023565 PB ieee/STD_LOGIC_UNSIGNED 1200023567
+AR work/latch_rx/behavior 1544787005 \
+      FL "E:/Pieter-Jan Steeman/Project/Xilinx/Receiver/latch.vhd" \
+      EN work/latch_rx 1544787004
+FL "E:/Pieter-Jan Steeman/Project/Xilinx/Receiver/mfilter.vhd" 2018/12/03.16:40:58 K.31
+EN work/mfilter_rx 1544786992 \
+      FL "E:/Pieter-Jan Steeman/Project/Xilinx/Receiver/mfilter.vhd" \
+      PB ieee/std_logic_1164 1200023565 PB ieee/STD_LOGIC_UNSIGNED 1200023567
+AR work/mfilter_rx/behavior 1544786993 \
+      FL "E:/Pieter-Jan Steeman/Project/Xilinx/Receiver/mfilter.vhd" \
+      EN work/mfilter_rx 1544786992
+FL "E:/Pieter-Jan Steeman/Project/Xilinx/Receiver/mux.vhd" 2018/11/30.11:03:56 K.31
+EN work/mux_rx 1544786994 \
+      FL "E:/Pieter-Jan Steeman/Project/Xilinx/Receiver/mux.vhd" \
+      PB ieee/std_logic_1164 1200023565 PB ieee/STD_LOGIC_UNSIGNED 1200023567
+AR work/mux_rx/behavior 1544786995 \
+      FL "E:/Pieter-Jan Steeman/Project/Xilinx/Receiver/mux.vhd" EN work/mux_rx 1544786994
+FL "E:/Pieter-Jan Steeman/Project/Xilinx/Receiver/pngen_nco.vhd" 2018/12/06.12:59:12 K.31
+EN work/pngen_rx 1544786996 \
+      FL "E:/Pieter-Jan Steeman/Project/Xilinx/Receiver/pngen_nco.vhd" \
+      PB ieee/std_logic_1164 1200023565 PB ieee/STD_LOGIC_UNSIGNED 1200023567
+AR work/pngen_rx/behavior 1544786997 \
+      FL "E:/Pieter-Jan Steeman/Project/Xilinx/Receiver/pngen_nco.vhd" \
+      EN work/pngen_rx 1544786996
+FL "E:/Pieter-Jan Steeman/Project/Xilinx/Receiver/ReceiverTop.vhd" 2018/12/14.12:28:12 K.31
+EN work/receiverTop_rx 1544787016 \
+      FL "E:/Pieter-Jan Steeman/Project/Xilinx/Receiver/ReceiverTop.vhd" \
+      PB ieee/std_logic_1164 1200023565 PB ieee/STD_LOGIC_UNSIGNED 1200023567
+AR work/receiverTop_rx/behavior 1544787017 \
+      FL "E:/Pieter-Jan Steeman/Project/Xilinx/Receiver/ReceiverTop.vhd" \
+      EN work/receiverTop_rx 1544787016 CP clkDiv_rx CP apptop_rx CP shiftreg_rx \
+      CP acctop_rx
+FL "E:/Pieter-Jan Steeman/Project/Xilinx/Receiver/segdec.vhd" 2018/11/30.11:05:40 K.31
+EN work/segdec_rx 1544787006 \
+      FL "E:/Pieter-Jan Steeman/Project/Xilinx/Receiver/segdec.vhd" \
+      PB ieee/std_logic_1164 1200023565 PB ieee/STD_LOGIC_UNSIGNED 1200023567
+AR work/segdec_rx/behavior 1544787007 \
+      FL "E:/Pieter-Jan Steeman/Project/Xilinx/Receiver/segdec.vhd" \
+      EN work/segdec_rx 1544787006
+FL "E:/Pieter-Jan Steeman/Project/Xilinx/Receiver/shiftreg.vhd" 2018/12/14.12:15:50 K.31
+EN work/shiftreg_rx 1544787012 \
+      FL "E:/Pieter-Jan Steeman/Project/Xilinx/Receiver/shiftreg.vhd" \
+      PB ieee/std_logic_1164 1200023565 PB ieee/STD_LOGIC_UNSIGNED 1200023567
+AR work/shiftreg_rx/behavior 1544787013 \
+      FL "E:/Pieter-Jan Steeman/Project/Xilinx/Receiver/shiftreg.vhd" \
+      EN work/shiftreg_rx 1544787012

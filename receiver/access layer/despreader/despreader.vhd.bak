@@ -1,0 +1,41 @@
+-- Pieter-Jan Steeman
+
+LIBRARY ieee;
+USE ieee.std_logic_1164.ALL;
+USE ieee.std_logic_unsigned.ALL;
+
+ENTITY despreader IS
+	PORT (
+		clk          : IN  std_logic;
+		clk_en       : IN  std_logic;
+		rst          : IN  std_logic;
+		sdi_spread   : IN  std_logic;
+		pn_seq      : IN  std_logic;
+		chip_sample2   : IN  std_logic;
+		sdi_despread : OUT std_logic
+    	 );
+END despreader;
+
+ARCHITECTURE behavior OF despreader IS
+	SIGNAL pres_desp		: std_logic := '0';
+	SIGNAL next_desp	: std_logic;
+BEGIN
+
+sdi_despread <= pres_desp;
+
+syn_despread : PROCESS (clk)
+BEGIN
+	IF (rising_edge(clk) AND clk_en = '1' AND chip_sample2 = '1') THEN
+		IF (rst = '1') THEN
+			pres_desp <= '0';
+		ELSE
+			pres_desp <= next_desp;
+		END IF;
+	END IF;
+END PROCESS syn_despread;
+
+com_despread : PROCESS(pres_desp, sdi_spread, pn_seq)
+BEGIN
+    next_desp <= sdi_spread XOR pn_seq;
+END PROCESS com_despread;
+END behavior;

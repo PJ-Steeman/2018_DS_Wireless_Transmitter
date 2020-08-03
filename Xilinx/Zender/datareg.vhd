@@ -1,0 +1,49 @@
+-- Pieter-Jan Steeman
+
+LIBRARY ieee;
+USE ieee.std_logic_1164.ALL;
+USE ieee.std_logic_unsigned.ALL;
+
+ENTITY datareg IS
+	PORT
+	(
+		clk     	: IN std_logic;							-- clock signaal
+		clk_en  	: IN std_logic;							-- clock enable om clock frequentie te verlagen
+		rst     	: IN std_logic;							-- reset
+		load     : IN std_logic;											
+		shift    : IN std_logic;
+		data     : IN std_logic_vector(3 DOWNTO 0);
+		sdo_posenc: OUT std_logic    	-- output
+	);
+END datareg;
+
+ARCHITECTURE behavior OF datareg IS
+	SIGNAL pres_data: std_logic_vector(10 DOWNTO 0);
+	SIGNAL next_data: std_logic_vector(10 DOWNTO 0);
+	CONSTANT preamble: std_logic_vector(6 DOWNTO 0) := "0111110";
+BEGIN
+
+sdo_posenc <= pres_data(0);
+
+syn_data : PROCESS (clk)
+BEGIN
+	IF (rising_edge(clk) AND clk_en = '1') THEN
+		IF (rst = '1') THEN 
+			pres_data <= (OTHERS => '0');
+		ELSE
+			pres_data <= next_data;
+		END IF;
+	END IF;
+END PROCESS syn_data;
+
+com_data : PROCESS(pres_data, load, shift, data)
+BEGIN
+		IF load = '1' AND shift = '0' THEN 
+		next_data <= data(0) & data(1) & data(2) & data(3) & preamble;
+	ELSIF load = '0' AND shift = '1' THEN 
+		next_data <= '0' & pres_data(10 DOWNTO 1); 	
+	ELSE
+		next_data <= pres_data;
+	END IF;
+END PROCESS com_data;
+END behavior;

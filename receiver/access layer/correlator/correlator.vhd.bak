@@ -1,0 +1,62 @@
+-- Pieter-Jan Steeman
+
+LIBRARY ieee;
+USE ieee.std_logic_1164.ALL;
+USE ieee.std_logic_unsigned.ALL;
+
+ENTITY correlator IS
+	PORT (
+		clk          	: IN  std_logic;		-- klok
+		clk_en       	: IN  std_logic;		-- klok enable om kloksnelheid te verminderen
+		rst          	: IN  std_logic;		-- reset
+		sdi_despread 	: IN  std_logic;
+		bit_sample   	: IN  std_logic;
+		chip_sample2 	: IN  std_logic;
+		data_out		: OUT std_logic
+  	 );
+END correlator;
+
+ARCHITECTURE behavior OF correlator IS
+	SIGNAL next_count : std_logic_vector(5 DOWNTO 0) := "100000";
+	SIGNAL pres_count : std_logic_vector(5 DOWNTO 0) := "100000";
+	SIGNAL next_reg   : std_logic := '0';
+	SIGNAL pres_reg   : std_logic := '0';
+BEGIN
+
+data_out <= pres_reg;
+
+syn_corr : PROCESS (clk)							-- synchroon deel correlator
+BEGIN
+	IF (rising_edge(clk) AND clk_en = '1') THEN
+		IF (rst = '1') THEN
+			pres_count <= "100000";
+			pres_reg <= '0';
+		ELSE
+			pres_count <= next_count;
+			pres_reg <= next_reg;
+		END IF;
+	END IF;
+END PROCESS syn_corr;
+
+com_corr : PROCESS(bit_sample, chip_sample2, sdi_despread, pres_count, pres_reg)	-- asynchroon deel correlator
+BEGIN
+
+	IF ((bit_sample = '1') AND (pres_count(5) = '1')) THEN -- als 32 of hoger
+		next_count <= "100000";
+		next_reg <= '1';	-- totaal gem = 1
+		
+	ELSIF ((bit_sample = '1') AND (pres_count(5) = '0')) THEN -- als minder dan 32
+		next_count <= "100000";
+		next_reg <= '0';	-- totaal gem = 0
+
+	ELSIF (chip_sample2 = '1' AND sdi_despread = '1') THEN
+		next_count <= pres_count + 1;   -- optellen
+	ELSIF (chip_sample2 = '1' AND sdi_despread = '0') THEN 
+		next_count <= pres_count - 1;	-- aftellen
+	ELSE
+		next_count <= pres_count;
+		next_reg <= pres_reg;
+	END IF;
+
+END PROCESS com_corr;
+END behavior;

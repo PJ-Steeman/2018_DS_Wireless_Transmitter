@@ -1,0 +1,69 @@
+-- Pieter-Jan Steeman
+
+LIBRARY ieee;
+USE ieee.std_logic_1164.ALL;
+USE ieee.std_logic_unsigned.ALL;
+ENTITY pngen_rx IS
+PORT
+(
+	clk        		: IN std_logic;		-- klok
+	clk_en     		: IN std_logic;		-- klok enable om klo te vertragen
+	rst        		: IN std_logic;		-- reset
+	seq_det    		: IN std_logic;		-- gedetecteerde sequentie
+	chip_sample1	: IN std_logic;		-- 1 klokperiode vertraagde chip_sample
+	bit_sample  	: OUT std_logic;	-- bit sample
+	pn_ml1      	: OUT std_logic;	-- pn code outputs
+	pn_ml2       	: OUT std_logic;
+	pn_gold      	: OUT std_logic
+);
+END;
+
+ARCHITECTURE behavior OF pngen_rx IS
+
+	SIGNAL pres1, pres2     : std_logic_vector(4 DOWNTO 0) := (OTHERS => '0');
+	SIGNAL next1, next2     : std_logic_vector(4 DOWNTO 0) := (OTHERS => '0');
+	CONSTANT preset1  	: std_logic_vector(4 DOWNTO 0) := "00010";  -- de preset van de 1ste pn generator
+	CONSTANT preset2  	: std_logic_vector(4 DOWNTO 0) := "00111";  -- de preset van de 2de pn generator
+	SIGNAL pres_full_seq    : std_logic;
+	SIGNAL next_full_seq    : std_logic := '0';
+
+BEGIN
+
+pn_ml1 <= pres1(0);
+pn_ml2 <= pres2(0);
+pn_gold <= pres1(0) XOR pres2(0);	-- gold maken via XOR
+
+bit_sample <= pres_full_seq;
+
+syn_pn : PROCESS (clk)		-- synchroon deel pn decoder
+BEGIN
+	IF (rising_edge(clk) AND clk_en = '1' AND chip_sample1 = '1') THEN
+		IF (rst = '1') THEN
+			pres1 <= preset1;		-- presets laden
+			pres2 <= preset2;
+			pres_full_seq <= '0';
+		ELSE
+			pres_full_seq <= next_full_seq;
+			pres1 <= next1;
+			pres2 <= next2;
+		END IF;
+	END IF;
+END PROCESS syn_pn;
+
+com_pn : PROCESS (pres1, pres2, seq_det, pres_full_seq)		-- combinatorisch deel pn decoder
+BEGIN
+	IF (seq_det = '1') THEN
+		next1 <= preset1;		-- presets laden
+		next2 <= preset2;
+	ELSE
+		next1 <= (pres1(0) XOR pres1(3)) & pres1(4 DOWNTO 1);
+		next2 <= (((pres2(0) XOR pres2(1)) XOR pres2(3)) XOR pres2(4)) & pres2(4 DOWNTO 1);
+
+		IF (pres1 = "00010") THEN
+			next_full_seq <= '1';
+		ELSE
+			next_full_seq <= '0';
+		END IF;	
+	END IF;
+END PROCESS com_pn;
+END behavior;
